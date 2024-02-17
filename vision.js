@@ -5,6 +5,9 @@ const closeText = document.getElementById("tooCloseText")
 const confidence = document.getElementById("confidence")
 const angle = document.getElementById("angle")
 dotSize = 20
+//myWorkouts = sessionStorage.getItem("workouts")
+myWorkouts = ["butterfly"]
+timer = 10
 
 function setup() {
     createCanvas(680, 480);
@@ -38,9 +41,11 @@ function gotPoses(poses){
         pose = poses[0].pose;
         confidence.innerHTML = pose.score
         checkDots(pose)
-        angle.innerHTML = getAngle(pose.rightWrist.x, pose.rightWrist.y, 
-            pose.rightHip.x, pose.rightHip.y, 
-            pose.rightKnee.x, pose.rightKnee.y)
+        //angle.innerHTML = getAngle(pose.rightWrist.x, pose.rightWrist.y, 
+        //    pose.rightShoulder.x, pose.rightHip.y, 
+        //    pose.rightKnee.x, pose.rightKnee.y)
+        timer += 0.01
+        angle.innerHTML = timer
     } else{
         confidence.innerHTML = "Please enter frame"
     }
