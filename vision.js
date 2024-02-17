@@ -3,8 +3,17 @@ function setup() {
     video = createCapture(VIDEO)
     video.hide()
   }
-  
+cameraOn = 1;
+const button = document.getElementById("changeButton")
+  button.onclick = (event) => {
+    event.preventDefault()
+    cameraOn *= -1
+  } 
+
   function draw() {
-    background(220);
-    image(video, 0, 0)
+    if (cameraOn == 1){
+        background(220);
+        image(video, 0, 0)
+    }
+    
   }
