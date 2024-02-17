@@ -3,6 +3,7 @@ let podeNet;
 let pose;
 const closeText = document.getElementById("tooCloseText")
 const confidence = document.getElementById("confidence")
+const angle = document.getElementById("angle")
 dotSize = 20
 
 function setup() {
@@ -37,6 +38,9 @@ function gotPoses(poses){
         pose = poses[0].pose;
         confidence.innerHTML = pose.score
         checkDots(pose)
+        angle.innerHTML = getAngle(pose.rightWrist.x, pose.rightWrist.y, 
+            pose.rightHip.x, pose.rightHip.y, 
+            pose.rightKnee.x, pose.rightKnee.y)
     } else{
         confidence.innerHTML = "Please enter frame"
     }
@@ -53,9 +57,17 @@ const button = document.getElementById("changeButton")
     event.preventDefault()
     cameraOn *= -1
     window.alert("pressed")
+    
   }
 
 closeText.style.display="flex"
+
+function getAngle(Ax, Ay, Bx, By, Cx, Cy){
+    b=Math.sqrt((Ax - Bx)**2 + (Ay - By)**2)
+    a=Math.sqrt((Cx - Bx)**2 + (Cy - By)**2)
+    c=Math.sqrt((Ax - Cx)**2 + (Ay - Cy)**2)
+    return Math.acos((a**2 + b**2 - c**2) / (2 * a * b))
+}
 
   function draw() {
     if (cameraOn == 1){
@@ -81,8 +93,6 @@ closeText.style.display="flex"
             ellipse(pose.rightHip.x, pose.rightHip.y, dotSize)
             ellipse(pose.leftHip.x, pose.leftHip.y, dotSize)
         } 
-    } else{
-        background(220);
-    }
+    } 
     
   }
