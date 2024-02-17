@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
 html{
   height:100%;
 }
@@ -144,19 +145,21 @@ body{
   justify-content: space-between;
 }
 #welcomeText{
-  font-size:84px;
-  font-weight:400;
-  margin: 0px 0px 150px 0px;
-  color:rgb(57, 53, 53)
+  font-family: Calibri;
+  font-size:120px;
+  font-weight:600;
+  margin: 0px 0px 75px 0px;
+  color:rgb(37, 37, 37)
 }
 #startStretch{
-  margin: 10px 0px;
-  font-size:40px;
-  font-weight:bold;
-  color:white;
+  font-family: Calibri;
+  margin: 75px 0px 0px 0px;
+  font-size:36px;
+  font-weight:300;
+  color:rgb(53, 45, 45);
   border-radius:30px;
-  background-color:palevioletred;
-  padding:15px 10px;
+  background-color:rgb(207, 152, 171);
+  padding:15px 30px;
   box-shadow:0px 3px 10px;
 }
 #homeSide{
@@ -171,8 +174,8 @@ body{
   align-items:center;
 }
 #homeMain hr{
-  width:80%;
-  border: solid 3px rgb(57, 53, 53);
+  width:100%;
+  border: solid 3px rgb(37, 37, 37);
 }
 #sidebar{
   background-color:lightgreen;
