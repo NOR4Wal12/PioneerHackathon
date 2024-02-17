@@ -25,7 +25,8 @@ function checkIndex(){
 }
 
 // r2 = percent
-function pushStretchR(id, r2){
+function pushStretchR(id){
+    r2 = document.getElementById("testFirebaseInput")
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
