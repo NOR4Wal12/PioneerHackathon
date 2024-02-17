@@ -20,14 +20,14 @@ function checkDots(pose){
           pose.leftShoulder.confidence, pose.rightKnee.confidence, pose.leftKnee.confidence, 
           pose.rightAnkle.confidence, pose.leftAnkle.confidence]
     for (let i = 0; i<Lespos.length; i++){
-        if (Lespos[i] < 0.3){
+        if (Lespos[i] < 0.2){
             closeText.innerHTML = "Please make sure your entire body is in frame"
             allGood = false;
             break
         }
     }
     if (allGood == true){
-        closeText.innerHTML = ""
+        closeText.innerHTML = "Lets start streching!"
     }
 }
 
