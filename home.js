@@ -6,5 +6,13 @@ function closeNav(){
     document.getElementById("sidebar").style.width="0";
 }
 
-now = new Date();
-console.log(now)
+now = new Date().getHours();
+if (now >= 0 && now <= 11){
+
+}
+else if (now >=12 && now <= 18){
+
+}
+else {
+
+}

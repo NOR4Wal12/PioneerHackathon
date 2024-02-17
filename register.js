@@ -21,7 +21,8 @@ signupButton.onclick = (event) =>{
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
         localStorage.setItem("loggedIn","yes")
-        localStorage.setItem("user", name)
+        localStorage.setItem("name", name)
+        localStorage.setItem("user", email)
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"))
         database.ref(user+'/data').set({"name": name}).then(()=>{
@@ -45,7 +46,8 @@ googleLogin.onclick = (event) => {
         profile = result.user.providerData[0];
         name = profile.displayName
         email = profile.email
-        localStorage.setItem("user", name)
+        localStorage.setItem("name", name)
+        localStorage.setItem("user", email)
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"))
         database.ref(user+'/status').set({"name": name}).then(()=>{
