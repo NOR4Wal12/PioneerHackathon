@@ -1,11 +1,12 @@
+button = document.getElementById("openSidebar")
 function openNav(){
     document.getElementById("sidebar").style.width="250px";
-    document.getElementById("openSidebar").style.display="none";
+    button.onclick = closeNav
 }
 
 function closeNav(){
     document.getElementById("sidebar").style.width="0";
-    document.getElementById("openSidebar").style.display="flex";
+    button.onclick = openNav
 }
 time = document.getElementById("time")
 nameBox = document.getElementById("name")
