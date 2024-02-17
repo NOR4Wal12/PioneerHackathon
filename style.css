@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 html{
   height:100%;
 }
@@ -7,7 +8,7 @@ body{
   display:flex;
   flex-direction:column;
   background-color:#f6f3eb;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Fredoka", sans-serif;
 }
 #loginWrapper{
   height:100%;
@@ -136,10 +137,14 @@ body{
 }
 #bgFilter{
   height:100%;
-  backdrop-filter:blur(3px);
+  backdrop-filter:blur(7px);
   transition: margin-left .5s;
   display:flex;
   flex-direction:row;
+  align-items:center;
+}
+#welcomeText{
+  font-size:48px;
 }
 #sidebar{
   background-color:lightgreen;
@@ -151,7 +156,6 @@ body{
   z-index: 1;
   transition: 0.5s;
 }
-
 .hidden{
   opacity:0;
 }
