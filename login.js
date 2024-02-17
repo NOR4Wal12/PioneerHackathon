@@ -19,6 +19,7 @@ loginButton.onclick = (event) =>{
 firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     localStorage.setItem("loggedIn","yes")
+    localStorage.setItem("name", name)
     localStorage.setItem("user", email)
     window.location.href = "home.html" 
   })
@@ -36,6 +37,8 @@ googleLogin.onclick = (event) => {
         localStorage.setItem("loggedIn","yes")
         profile = result.user.providerData[0];
         email = profile.email
+        name = profile.displayName
+        localStorage.setItem("name", name)
         localStorage.setItem("user", email)
         window.location.href = "home.html"
     }).catch(function(error) {
