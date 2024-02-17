@@ -8,6 +8,7 @@
 <body>
     <h1>Webcam Display</h1>
     <video id="videoElement" autoplay></video>
+    <button id="startButton">Start Webcam</button>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/opencv.js/4.5.3/opencv.js" integrity="sha384-o1wFAXem/2XcC0Bv4oOuzty4r8+1Hl5tpPpY4dXt/q8YGn2vayrobojvB7a1liI3" crossorigin="anonymous"></script>
     
@@ -28,8 +29,8 @@
                 });
         }
 
-        // Call the function to start the webcam feed
-        startWebcam();
+        // Function to handle button click
+        document.getElementById('startButton').addEventListener('click', startWebcam);
     </script>
 </body>
 </html>
