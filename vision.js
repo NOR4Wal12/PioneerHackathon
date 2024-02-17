@@ -16,8 +16,8 @@ function gotPoses(poses){
     console.log(poses)
     if (poses.length > 0){
         pose = poses[0].pose;
+        confidence.innerHTML = pose.keypoints[1]
     }
-    confidence.innerHTML = poses[0].confidence
 }
 
 function modelLoaded(){
