@@ -36,7 +36,7 @@ function gotPoses(poses){
     if (poses.length > 0){
         pose = poses[0].pose;
         confidence.innerHTML = pose.score
-        checkPose(pose)
+        checkDots(pose)
     } else{
         confidence.innerHTML = "Please enter frame"
     }
