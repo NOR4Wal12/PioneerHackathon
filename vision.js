@@ -3,6 +3,7 @@ let podeNet;
 let pose;
 const closeText = document.getElementById("tooCloseText")
 const confidence = document.getElementById("confidence")
+dotSize = 20
 
 function setup() {
     createCanvas(680, 480);
@@ -41,13 +42,13 @@ closeText.style.display="flex"
         image(video, 0, 0)
         if (pose) {
             fill(255,0,0)
-            ellipse(pose.nose.x, pose.nose.y, 40)
-            ellipse(pose.rightWrist.x, pose.rightWrist.y, 40)
-            ellipse(pose.leftWrist.x, pose.leftWrist.y, 40)
-            ellipse(pose.rightShoulder.x, pose.rightShoulder.y, 40)
-            ellipse(pose.leftShoulder.x, pose.leftShoulder.y, 40)
-            ellipse(pose.rightKnee.x, pose.rightKnee.y, 40)
-            ellipse(pose.leftKnee.x, pose.leftKnee.y, 40)
+            ellipse(pose.nose.x, pose.nose.y, dotSize)
+            ellipse(pose.rightWrist.x, pose.rightWrist.y, dotSize)
+            ellipse(pose.leftWrist.x, pose.leftWrist.y, dotSize)
+            ellipse(pose.rightShoulder.x, pose.rightShoulder.y, dotSize)
+            ellipse(pose.leftShoulder.x, pose.leftShoulder.y, dotSize)
+            ellipse(pose.rightKnee.x, pose.rightKnee.y, dotSize)
+            ellipse(pose.leftKnee.x, pose.leftKnee.y, dotSize)
         } else{
             fill(0,255,0)
             ellipse(340, 240, 64)
