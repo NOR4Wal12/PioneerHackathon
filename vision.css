@@ -6,3 +6,6 @@ html, body {
     display: block;
   }
   
+#tooCloseText{
+    display: none;
+}

@@ -1,6 +1,8 @@
 let video;
 let podeNet;
 let pose;
+const closeText = document.getElementById("tooCloseText")
+const confidence = document.getElementById("confidence")
 
 function setup() {
     createCanvas(680, 480);
@@ -12,14 +14,14 @@ function setup() {
 
 function gotPoses(poses){
     console.log(poses)
-    if (postMessage.length > 0){
+    if (poses.length > 0){
         pose = poses[0].pose;
-
     }
+    confidence.innerHTML = poses[0].confidence
 }
 
 function modelLoaded(){
-    console.log("loadedChips")
+    console.log("I love men I love men I love men I love men")
 }
 
 
@@ -29,7 +31,9 @@ const button = document.getElementById("changeButton")
     event.preventDefault()
     cameraOn *= -1
     window.alert("pressed")
-  } 
+  }
+
+closeText.style.display="flex"
 
   function draw() {
     if (cameraOn == 1){
