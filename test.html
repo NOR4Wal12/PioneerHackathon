@@ -6,6 +6,7 @@
     <title>Webcam Display with Pose Detection</title>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+    <script src="firebase.js"></script>
     <style>
         #videoContainer {
             display: flex;
@@ -23,6 +24,8 @@
             <h2>Webcam Feed</h2>
             <video id="videoElement" autoplay></video>
             <button id="startButton" onclick="startWebcam()">Start Webcam</button>
+            <input type="text" id="testFirebaseInput" name="input">
+            <button id="asdf" onclick="pushStretchR(1)">push text value to id 1:</button>
             <button id="stopButton" onclick="stopWebcam()" style="display: none;">Stop Webcam</button>
         </div>
         <div>
