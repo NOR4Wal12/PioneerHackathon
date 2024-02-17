@@ -131,13 +131,13 @@ body{
   justify-content:start;
   align-items:stretch;
   overflow:auto;
-  background: url('bg.png');
+  background: url('images/bg.png');
   background-size:cover;
   background-position:center;
-  backdrop-filter:blur(5px);
 }
-#bgImage{
- height:100%;
+#bgFilter{
+  height:100%;
+  backdrop-filter:blur(5px);
 }
 .hidden{
   opacity:0;
