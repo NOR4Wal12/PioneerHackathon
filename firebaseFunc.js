@@ -62,6 +62,13 @@ function addWorkout(name){
     });
 }
 
+function clearCustom(){
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
+    database.ref(user + '/custom').set({array:[]}).then((snapshot)=>{})
+}
+
 
 // function loadTextFromDatabase(){
 //     var dbRef = firebase.database().ref().child("messagesAndNames");
