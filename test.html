@@ -3,34 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webcam Display</title>
+    <title>Webcam Display with Pose Detection</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+    <style>
+        #videoContainer {
+            display: flex;
+            justify-content: space-around;
+        }
+        video {
+            max-width: 50%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Webcam Display</h1>
-    <video id="videoElement" autoplay></video>
-    <button id="startButton">Start Webcam</button>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/opencv.js/4.5.3/opencv.js" integrity="sha384-o1wFAXem/2XcC0Bv4oOuzty4r8+1Hl5tpPpY4dXt/q8YGn2vayrobojvB7a1liI3" crossorigin="anonymous"></script>
-    
+    <h1>Webcam Display with Pose Detection</h1>
+    <div id="videoContainer">
+        <div>
+            <h2>Webcam Feed</h2>
+            <video id="videoElement" autoplay></video>
+            <button id="startButton" onclick="startWebcam()">Start Webcam</button>
+            <button id="stopButton" onclick="stopWebcam()" style="display: none;">Stop Webcam</button>
+        </div>
+        <div>
+            <h2>Pose Detection</h2>
+            <canvas id="outputCanvas" width="640" height="480"></canvas>
+        </div>
+    </div>
+
     <script>
-        // Function to start the webcam feed
-        function startWebcam() {
-            // Access the video element
-            const videoElement = document.getElementById('videoElement');
-            
-            // OpenCV code to access the webcam
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(stream => {
-                    videoElement.srcObject = stream;
-                    videoElement.play();
-                })
-                .catch(err => {
-                    console.error('Error accessing the webcam: ', err);
-                });
+        let videoElement, outputCanvas, net;
+
+        async function startWebcam() {
+            videoElement = document.getElementById('videoElement');
+            outputCanvas = document.getElementById('outputCanvas');
+
+            // Access webcam
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            videoElement.srcObject = stream;
+
+            // Load PoseNet model
+            net = await posenet.load();
+
+            // Enable/disable buttons
+            document.getElementById('startButton').style.display = 'none';
+            document.getElementById('stopButton').style.display = 'inline-block';
+
+            detectPose();
         }
 
-        // Function to handle button click
-        document.getElementById('startButton').addEventListener('click', startWebcam);
+        function stopWebcam() {
+            const stream = videoElement.srcObject;
+            const tracks = stream.getTracks();
+
+            tracks.forEach(track => track.stop());
+
+            // Enable/disable buttons
+            document.getElementById('startButton').style.display = 'inline-block';
+            document.getElementById('stopButton').style.display = 'none';
+        }
+
+        async function detectPose() {
+            const videoWidth = videoElement.videoWidth;
+            const videoHeight = videoElement.videoHeight;
+
+            outputCanvas.width = videoWidth;
+            outputCanvas.height = videoHeight;
+
+            const ctx = outputCanvas.getContext('2d');
+
+            async function poseDetectionFrame() {
+                // Estimate poses
+                const poses = await net.estimatePoses(videoElement, {
+                    flipHorizontal: false,
+                    decodingMethod: 'single-person'
+                });
+
+                // Draw poses
+                ctx.clearRect(0, 0, videoWidth, videoHeight);
+                poses.forEach(({ score, keypoints }) => {
+                    if (score >= 0.5) {
+                        // Draw keypoints
+                        keypoints.forEach(({ position }) => {
+                            ctx.beginPath();
+                            ctx.arc(position.x, position.y, 3, 0, 2 * Math.PI);
+                            ctx.fillStyle = 'red';
+                            ctx.fill();
+                        });
+                    }
+                });
+
+                requestAnimationFrame(poseDetectionFrame);
+            }
+
+            poseDetectionFrame();
+        }
     </script>
 </body>
 </html>
