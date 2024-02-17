@@ -8,6 +8,9 @@ function closeNav(){
     document.getElementById("openSidebar").style.display="flex";
 }
 time = document.getElementById("time")
+nameBox = document.getElementById("name")
+name = localStorage.getItem("name")
+nameBox.innerHTML = name
 now = new Date().getHours();
 if (now >= 0 && now <= 11){
     time.innerHTML = "morning"
