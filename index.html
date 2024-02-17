@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.webmanifest">
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script src="firebase.js" defer></script>
-    <script src="index.js" defer></script>
-    <title>Yoga app</title>
-</head>
-<body onload="checkIndex()">
-       <a href="register.html">register test</a>
-       <a href="login.html">login test</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yogamind</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <img class="logo" src="logo.png" alt="" />
+        <p class="logotext">Yogamind</p>
+        <nav>
+          <ul>
+            <li><a href="home">HOME</a></li>
+            <li><a href="demo">DEMO</a></li>
+          </ul>
+        </nav>
+        <a href="signup" class="signupbutton">Sign Up</a>
+        <a href="login" class="loginbutton">Log In</a>
+      </div>
+      <div class="introduction">
+        <p class="introtext">Introducing YogaMind</p>
+        <p class="introsubtext">
+          This provides smart yoga poses and accuracy detection reinforcing
+          position and more effective meditation.
+        </p>
+        <p>
+          <button class="learnmorebutton">Get Started</button>
+        </p>
+        <!-- <div>
+          <video loop muted autoplay poster="images/background.jpg">
+            <source src="backgroundvideo1.mp4" type="video/mp4" />
+          </video>
+        </div> -->
+      </div>
+    </div>
+  </body>
 </html>
