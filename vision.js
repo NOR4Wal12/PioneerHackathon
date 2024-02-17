@@ -1,8 +1,18 @@
+let video;
+let podeNet;
+
 function setup() {
     createCanvas(680, 480);
     video = createCapture(VIDEO)
     video.hide()
+    poseNet = ml5.poseNet(video, modelLoaded)
   }
+
+function modelLoaded(){
+    console.log("loadedChips")
+}
+
+
 cameraOn = 1;
 const button = document.getElementById("changeButton")
   button.onclick = (event) => {
