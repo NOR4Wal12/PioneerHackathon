@@ -1,0 +1,13 @@
+{
+  "name": "pioneerapp",
+  "start_url": "/pioneerhackathon/index.html",
+  "scope": "/pioneerhackathon/",
+  "display": "standalone", 
+  "icons": [
+      {
+        "src": "images/logo.png",
+        "type": "image/png",
+        "sizes": "700x700"
+      }
+  ]
+}
