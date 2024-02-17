@@ -22,7 +22,7 @@ signupButton.onclick = (event) =>{
         localStorage.setItem("user", email)
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"))
-        database.ref(user+'/status').set({data: false}).then(()=>{
+        database.ref(user+'/data').set({data: false}).then(()=>{
             window.location.href="home.html"
         })    
     })
