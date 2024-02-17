@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  @font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url("Staatliches-Regular.ttf");
+  }
+  
+  body {
+    background-image: url("https://images.unsplash.com/photo-1614852207179-f21528f68aa0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    overflow-x: hidden;
+  }
+  
+  .container {
+    height: 100vh;
+    width: 100%;
+    /* background-image: url(images/background.jpg); */
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .logo {
+    height: 6rem;
+    width: 6rem;
+    padding-top: 0px;
+    padding-left: 20px;
+  }
+  
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 8%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  nav {
+    flex: 1;
+    padding-top: 5px;
+    padding-left: 40px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0px 12px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    font-size: 17px;
+    font-family: sans-serif;
+    color: #333;
+    padding-left: 20px;
+  }
+  
+  ul {
+    padding-bottom: 4px;
+  }
+  
+  .logotext {
+    font-family: Staatliches;
+    font-size: 30px;
+    padding-left: 10px;
+    padding-bottom: 0px;
+  }
+  
+  .signupbutton {
+    background-color: #ffffff;
+    border: rgb(0, 0, 0) solid 1px;
+    color: rgb(0, 0, 0);
+    padding: 11px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Calibri;
+    border-radius: 30px;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .loginbutton {
+    background-color: #000000;
+    border: rgb(0, 0, 0) solid 1px;
+    color: rgb(255, 255, 255);
+    padding: 11px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Calibri;
+    border-radius: 30px;
+    margin-right: 40px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .globe {
+    margin-right: 40px;
+    width: 30px;
+  }
+  
+  .introtext {
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 70px;
+  }
+  
+  .introduction {
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 150px;
+    width: 900px;
+    color: rgb(255, 255, 255);
+    /* color: rgb(46, 75, 51); */
+  }
+  
+  .introsubtext {
+    font-family: Calibri;
+    margin-top: 35px;
+    font-size: 30px;
+    width: 1000px;
+    color: rgb(255, 255, 255);
+    /* color: rgb(57, 90, 63); */
+  }
+  
+  .learnmorebutton {
+    background-color: #ffffff00;
+    border: rgb(255, 255, 255) solid 3px;
+    color: rgb(255, 255, 255);
+    padding: 18px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 23px;
+    font-family: Calibri;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 45px;
+    font-weight: bold;
+  }
+  
+  video {
+    filter: brightness(60%);
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  
