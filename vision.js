@@ -13,11 +13,32 @@ function setup() {
     poseNet.on('pose', gotPoses)
   }
 
+function checkDots(pose){
+    allGood = true;
+    Lespos = [pose.nose.confidence, pose.rightHip.confidence, pose.leftHip.confidence, 
+          pose.rightWrist.confidence, pose.leftWrist.confidence, pose.rightShoulder.confidence, 
+          pose.leftShoulder.confidence, pose.rightKnee.confidence, pose.leftKnee.confidence, 
+          pose.rightAnkle.confidence, pose.leftAnkle.confidence]
+    for (let i = 0; i<Lespos.length; i++){
+        if (Lespos[i] < 0.3){
+            closeText.innerHTML = "Please make sure your entire body is in frame"
+            allGood = false;
+            break
+        }
+    }
+    if (allGood == true){
+        closeText.innerHTML = ""
+    }
+}
+
 function gotPoses(poses){
     console.log(poses)
     if (poses.length > 0){
         pose = poses[0].pose;
         confidence.innerHTML = pose.score
+        checkPose(pose)
+    } else{
+        confidence.innerHTML = "Please enter frame"
     }
 }
 
@@ -43,16 +64,23 @@ closeText.style.display="flex"
         if (pose) {
             fill(255,0,0)
             ellipse(pose.nose.x, pose.nose.y, dotSize)
+            ellipse((pose.rightHip.x + pose.leftHip.x)/2, (pose.rightHip.y + pose.leftHip.y)/2, dotSize)
+            
             ellipse(pose.rightWrist.x, pose.rightWrist.y, dotSize)
             ellipse(pose.leftWrist.x, pose.leftWrist.y, dotSize)
+            
             ellipse(pose.rightShoulder.x, pose.rightShoulder.y, dotSize)
             ellipse(pose.leftShoulder.x, pose.leftShoulder.y, dotSize)
+            
             ellipse(pose.rightKnee.x, pose.rightKnee.y, dotSize)
             ellipse(pose.leftKnee.x, pose.leftKnee.y, dotSize)
-        } else{
-            fill(0,255,0)
-            ellipse(340, 240, 64)
-        }
+            
+            ellipse(pose.rightAnkle.x, pose.rightAnkle.y, dotSize)
+            ellipse(pose.leftAnkle.x, pose.leftAnkle.y, dotSize)
+
+            ellipse(pose.rightHip.x, pose.rightHip.y, dotSize)
+            ellipse(pose.leftHip.x, pose.leftHip.y, dotSize)
+        } 
     } else{
         background(220);
     }
