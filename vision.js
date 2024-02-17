@@ -8,6 +8,7 @@ const button = document.getElementById("changeButton")
   button.onclick = (event) => {
     event.preventDefault()
     cameraOn *= -1
+    wind
   } 
 
   function draw() {
