@@ -43,9 +43,7 @@ googleLogin.onclick = (event) => {
     firebase.auth().signInWithPopup(provider).then(function(result) {
         localStorage.setItem("loggedIn","yes")
         profile = result.user.providerData[0];
-        console.log(profile)
-        window.alert(profile)
-        name = profile.name
+        name = profile.displayName
         email = profile.email
         localStorage.setItem("user", name)
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
