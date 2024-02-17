@@ -5,3 +5,6 @@ function openNav(){
 function closeNav(){
     document.getElementById("sidebar").style.width="0";
 }
+
+now = new Date();
+console.log(now)
