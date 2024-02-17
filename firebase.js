@@ -51,7 +51,7 @@ function pushStretchR(id){
     }
 }
 
-function pushCustomized(names[]){
+function pushCustomized(names){
     r2 = document.getElementById("testFirebaseInput").value
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
