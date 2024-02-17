@@ -51,7 +51,7 @@ googleLogin.onclick = (event) => {
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"))
         database.ref(user+'/status').set({"name": name}).then(()=>{
-            window.location.href="home.html"
+            //window.location.href="home.html"
         }) 
     }).catch(function(error) {
         errorLabel.className="";
