@@ -34,19 +34,47 @@ function pushCustomized(names){
 }
 
 function addWorkout(name){
-    r2 = document.getElementById("testFirebaseInput").value
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
-    current = []
-    database.ref(user+'/custom').once('value').then((snapshot)=>{ 
-        data = snapshot.val()
-        current = data
-        // addressInput.value = data.address
-        // cityInput.value = data.city
-        // zipInput.value = data.zip
-        // birthInput.value = data.birthdate
+    database.ref(user+'/custom').once('value').then((snapshot)=>{
+        current = snapshot.val()
+        if (current == null){
+            current = []
+        }
+        else {
+            current = current.array
+        }
+        database.ref(user + '/custom').set({array:current}).then((snapshot)=>{})
     })
-    console.log(current)
-    database.ref(user + '/custom').set(current.push(name)).then((snapshot)=>{})
+
+    var str = "";
+    database.ref(user + '/custom').once('value',(snapshot)=>{
+        var index = 1;
+        if (current != null) {
+            snapshot.forEach(function(data){
+                // str = "\t" + data.val().message + "<br/>" + str;
+                str += index + "." + data.val().message + "<br/>";
+                index++;
+            });
+            document.getElementById("list").innerHTML = str;
+        }
+    });
 }
+
+
+// function loadTextFromDatabase(){
+//     var dbRef = firebase.database().ref().child("messagesAndNames");
+//     var str = "";
+    
+//     dbRef.once('value',(snapshot)=>{
+//         snapshot.forEach(function(data){
+//             str = "\t" + data.val().message + "<br/>" + str;
+           
+//             str = data.val().name + ":<br/>" + str;
+//         });
+        
+//         document.getElementById("messageInput").innerHTML = str;
+//     });
+// }
+
