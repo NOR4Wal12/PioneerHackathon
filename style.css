@@ -124,6 +124,21 @@ body{
   font-weight:normal;
   color:white;
 }
+#homeWrapper{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:start;
+  align-items:stretch;
+  overflow:auto;
+  background: url('/images/bg.jpg');
+  background-size:cover;
+  background-position:center;
+  backdrop-filter:blur(5px);
+}
+#bgImage{
+ height:100%;
+}
 .hidden{
   opacity:0;
 }
