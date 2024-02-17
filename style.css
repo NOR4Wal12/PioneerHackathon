@@ -141,7 +141,7 @@ body{
   transition: margin-left .5s;
   display:flex;
   flex-direction:row;
-  justify-content: center;
+  justify-content: space-between;
 }
 #welcomeText{
   font-size:60px;
