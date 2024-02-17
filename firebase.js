@@ -23,3 +23,11 @@ function checkIndex(){
       window.location.href = "home.html";
   }
 }
+
+// r2 = percent
+function pushStretchR(id, r2){
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
+    database.ref(user + '/' + id).set(r2).then((snapshot)=>{})
+}
