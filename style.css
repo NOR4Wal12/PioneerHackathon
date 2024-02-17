@@ -9,7 +9,7 @@ body{
   display:flex;
   flex-direction:column;
   background-color:#f6f3eb;
-  font-family: "Fredoka", sans-serif;
+  font-family: Calibri;
 }
 #loginWrapper{
   height:100%;
@@ -178,14 +178,30 @@ body{
   border: solid 3px rgb(37, 37, 37);
 }
 #sidebar{
-  background-color:lightgreen;
+  background-color:rgb(76, 92, 128);
   display:flex;
   flex-direction:column;
+  align-items:center;
+  justify-content:start;
   height:100%;
   width:0;
   overflow-x: hidden;
   z-index: 1;
   transition: 0.5s;
+}
+#sidebar a{
+  font-family:Calibri;
+  font-weight:300;
+  font-size:30px;
+  color:white;
+  text-decoration:none;
+  margin:0px;
+  padding: 30px 5px;
+  width:100%;
+  text-align:center;
+}
+#sidebar a:hover{
+  background-color:rgba(255, 255, 255, 0.103)
 }
 #openSidebar{
   display:flex;
