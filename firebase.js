@@ -8,5 +8,15 @@ const firebaseConfig = {
     appId: "1:1006929338819:web:3e82bb46f56ea558f5dd76"
   };
 
-  firebase.initializeApp(firebaseConfig);
-  const database = firebase.database();
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+  
+function check(){
+  if(localStorage.getItem("loggedIn")=="yes"){
+      window.location.href = "home.html";
+  }
+  else{
+      window.location.href = "index.html";
+  }
+}
