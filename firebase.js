@@ -13,10 +13,13 @@ const database = firebase.database();
 
   
 function check(){
+  if(localStorage.getItem("loggedIn")!="yes"){
+      window.location.href = "index.html";
+  }
+}
+
+function checkIndex(){
   if(localStorage.getItem("loggedIn")=="yes"){
       window.location.href = "home.html";
-  }
-  else{
-      window.location.href = "index.html";
   }
 }
