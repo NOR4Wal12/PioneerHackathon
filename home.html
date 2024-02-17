@@ -16,7 +16,14 @@
 <body onload="check()">
     <div id="homeWrapper">
         <div id="bgFilter">
-            <p>sample text</p>
+            <div id="sidebar">
+                <a href="#" id="closeButton" onclick="closeNav()">&times;</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+            </div>
+            <button id="openSidebar" onclick="openNav()">&#9776;</button>
         </div>
     </div>
 </body>
