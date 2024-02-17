@@ -137,7 +137,7 @@ body{
 }
 #bgFilter{
   height:100%;
-  backdrop-filter:blur(5px);
+  backdrop-filter:blur(3px);
 }
 .hidden{
   opacity:0;
