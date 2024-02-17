@@ -141,10 +141,10 @@ body{
   transition: margin-left .5s;
   display:flex;
   flex-direction:row;
-  align-items:center;
+  justify-content: center;
 }
 #welcomeText{
-  font-size:48px;
+  font-size:60px;
 }
 #sidebar{
   background-color:lightgreen;
@@ -155,6 +155,9 @@ body{
   overflow-x: hidden;
   z-index: 1;
   transition: 0.5s;
+}
+#openSidebar{
+  align-self:start;
 }
 .hidden{
   opacity:0;
