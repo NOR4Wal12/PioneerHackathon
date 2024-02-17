@@ -16,16 +16,19 @@
 <body onload="check()">
     <div id="homeWrapper">
         <div id="bgFilter">
-            <div id="sidebar">
-                <a href="#" id="closeSidebar" onclick="closeNav()">&times;</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
+            <div id="homeSide">
+                <div id="sidebar">
+                    <a href="#" id="closeSidebar" onclick="closeNav()">&times;</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Clients</a>
+                    <a href="#">Contact</a>
+                </div>
+                <button id="openSidebar" onclick="openNav()">&#9776;</button>
             </div>
-            <button id="openSidebar" onclick="openNav()">&#9776;</button>
-            <p id="welcomeText">Good <span id="time">iuygy</span>, <span id="name">Alex</span></p>
-            <p class="hidden">o</p>
+            <div id="homeMain">
+                <p id="welcomeText">Good <span id="time">iuygy</span>, <span id="name">Alex</span></p>
+            </div>
         </div>
     </div>
 </body>

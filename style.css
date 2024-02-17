@@ -146,6 +146,17 @@ body{
 #welcomeText{
   font-size:60px;
 }
+#homeSide{
+  display:flex;
+  flex-direction:row;
+  justify-content:start;
+}
+#homeMain{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
 #sidebar{
   background-color:lightgreen;
   display:flex;
@@ -157,9 +168,10 @@ body{
   transition: 0.5s;
 }
 #openSidebar{
+  display:flex;
   align-self:start;
   margin: 10px;
-  font-size:24px;
+  font-size:36px;
   font-weight:bold;
   background-color:rgba(0, 0, 0, 0);
   border:none;
