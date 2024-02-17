@@ -50,3 +50,12 @@ function pushStretchR(id){
         database.ref(user + '/stetches').set({9:r2}).then((snapshot)=>{})
     }
 }
+
+function pushCustomized(names[]){
+    r2 = document.getElementById("testFirebaseInput").value
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
+
+    // UNFINISHED
+}
