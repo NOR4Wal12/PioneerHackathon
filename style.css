@@ -9,6 +9,121 @@ body{
   background-color:#f6f3eb;
   font-family: 'Source Sans 3', sans-serif;
 }
+#loginWrapper{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:stretch;
+}
+#loginHeader{
+  background-color:#3c3b6e;
+  height:10%;
+  display:flex;
+  flex-direction:row;
+  align-items:end;
+  justify-content:space-between;
+}
+#loginHeader h3{
+  margin:10px;
+  font-size:20px;
+  font-weight:normal;
+  color:white;
+}
+#loginHeader a{
+  margin:5px 10px;
+  font-size:24px;
+  font-weight:normal;
+  color:white;
+  text-decoration:none;
+}
+#loginMiddle{
+  display:flex;
+  flex-direction:column;
+  height:80%;
+  justify-content:space-between;
+}
+#loginFields{
+  display:flex;
+  flex-direction:column;
+  margin:20px 20px;
+}
+#loginFields input{
+  font-size:16px;
+  background-color:rgba(0,0,0,0);
+  border:none;
+  margin:20px 0px;
+  padding:10px 0px;
+  border-bottom: 2px solid rgb(110, 110, 110);
+}
+#loginFields input:focus{
+  outline:none;
+  border-bottom: 2px solid #6968be;
+}
+#loginFields a{
+  text-decoration:none;
+}
+#loginFields a:hover{
+  text-decoration:underline;
+}
+#forgot{
+  font-weight:bold;
+  color:#6968be;
+  font-size:18px;
+  margin:5px 0px;
+}
+#forgot:hover{
+  text-decoration:underline;
+}
+#need{
+  color:black;
+}
+#loginFields h2{
+  font-size:16px;
+  color:rgb(82, 155, 82);
+  font-weight:normal;
+}
+#errorLabel{
+  margin:5px 0px;
+  font-size:18px;
+  font-weight:normal;
+  color:red;
+}
+
+#googleLoginBox{
+  display:flex;
+  flex-direction:row;
+  align-items:stretch;
+  border:solid black 1px;
+  border-radius:3px;
+  margin:20px 20px;
+  justify-content:center;
+  padding:10px;
+}
+#googleLoginBox h2{
+  margin:0px;
+  font-weight:normal;
+  font-size:18px;
+}
+#googleLoginBox img{
+  width:25px;
+  margin:0px 5px;
+}
+#loginFooter{
+  background-color:#3c3b6e;
+  height:10%;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-evenly;
+  width:100%;
+}
+#loginFooter h3{
+  margin:0px;
+  font-size:20px;
+  font-weight:normal;
+  color:white;
+}
 
 
 
