@@ -32,3 +32,21 @@ function pushCustomized(names){
 
     // UNFINISHED
 }
+
+function addWorkout(name){
+    r2 = document.getElementById("testFirebaseInput").value
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
+    current = []
+    database.ref(user+'/custom').once('value').then((snapshot)=>{ 
+        data = snapshot.val()
+        current = data
+        // addressInput.value = data.address
+        // cityInput.value = data.city
+        // zipInput.value = data.zip
+        // birthInput.value = data.birthdate
+    })
+    console.log(current)
+    database.ref(user + '/custom').set(current.push(name)).then((snapshot)=>{})
+}
