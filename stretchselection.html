@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="stylemenu.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yogamind</title>
+  </head>
+  <body>
+    <div class="sidenav">
+        <a href="#" onmouseover="previewVideo('butterfly', 'butterfly.mp4')" onclick="selectWorkout('butterfly')">Butterfly Pose</a>
+        <a href="#" onmouseover="previewVideo('camel', 'camel.mp4')" onclick="selectWorkout('camel')">Camel Pose</a>
+        <a href="#" onmouseover="previewVideo('crescent', 'crescent.mp4')" onclick="selectWorkout('crescent')">Crescent Pose</a>
+        <a href="#" onmouseover="previewVideo('easy', 'easy.mp4')" onclick="selectWorkout('easy')">Easy Pose</a>
+        <a href="#" onmouseover="previewVideo('triangle', 'triangle.mp4')" onclick="selectWorkout('triangle')">Triangle Pose</a>
+        <a href="#" onmouseover="previewVideo('reversewarrior', 'rw.mp4')" onclick="selectWorkout('reversewarrior')">Reverse Warrior Pose</a>
+        <a href="#" onmouseover="previewVideo('tree', 'tree.mp4')" onclick="selectWorkout('tree')">Tree Pose</a>
+        <a href="#" onmouseover="previewVideo('warrior1', 'w1.mp4')" onclick="selectWorkout('warrior1')">Warrior 1 Pose</a>
+        <a href="#" onmouseover="previewVideo('warrior2', 'w2.mp4')" onclick="selectWorkout('warrior2')">Warrior 2 Pose</a>
+        <a href="#" onmouseover="previewVideo('warrior3', 'w3.mp4')" onclick="selectWorkout('warrior3')">Warrior 3 Pose</a>
+  </div>
+    <div class="main">
+      <h2>Sidebar</h2>
+      <p>This sidebar is of full height (100%) and always shown.</p>
+    </div>
+    <div class="main" id="videoContainer"></div>
+    <script src="stretchselection.js"></script>
+  </body>
+</html>
