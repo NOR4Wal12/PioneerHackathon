@@ -1,4 +1,4 @@
-const signupButton = document.getElementById('submitButton');
+const signupButton = document.getElementById('loginSubmit');
 const emailField = document.getElementById("emailField")
 const nameField = document.getElementById("nameField")
 var passwordField = document.getElementById("passwordField")

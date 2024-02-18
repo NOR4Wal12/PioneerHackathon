@@ -1,4 +1,4 @@
-const loginButton = document.getElementById('submitButton');
+const loginButton = document.getElementById('loginSubmit');
 const emailField = document.getElementById("emailField")
 var passwordField = document.getElementById("passwordField")
 const googleLogin = document.getElementById('googleLoginBox')
