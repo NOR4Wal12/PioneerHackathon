@@ -37,18 +37,18 @@ function pullStretch(){
     user = user.substring(0,user.indexOf("@"))
 
     const stretchesRef = firebase.database().ref(user+"/stretches");
+    info = []
 
     stretchesRef.get().then((snapshot) => {
         if (snapshot.exists()) {
             const data = snapshot.val();
             const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3']; // Get all stretch IDs
             // Sort stretch IDs by descending value
-            stretchIds.sort((a, b) => {
-                const valueA = data[a]?.value || 100; // Default to 100 if value doesn't exist
-                const valueB = data[b]?.value || 100;
-                return valueB - valueA;
-            });
-            console.log("Sorted IDs by descending value:", stretchIds);
+            snapshot.forEach(function(data){
+                info.push(data.val())
+            })
+
+            console.log(info)
             // document.getElementById('result').innerText = JSON.stringify(stretchIds);
         } else {
             console.log("No data available");
