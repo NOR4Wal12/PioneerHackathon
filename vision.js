@@ -1,6 +1,7 @@
 let video;
 let poseNet;
 let pose;
+let inView = 1
 const closeText = document.getElementById("tooCloseText")
 const confidence = document.getElementById("confidence")
 const timer = document.getElementById("timer")
@@ -96,6 +97,7 @@ function checkDots(pose){
 function gotPoses(poses){
     //console.log(poses)
     if (poses.length > 0){
+        inView = 1
         pose = poses[0].pose;
         checkDots(pose)
         checkTo=5;
@@ -109,9 +111,9 @@ function gotPoses(poses){
             avg += errors[i]
         }
         if (avg < 400){
-            time -= 0.2
+            time -= 0.15
         } else{
-            time -= 0.07
+            time -= 0.01
         }
         timer.innerHTML = "Time Remaining: " + Math.round(time)
         if (time <= 0.2){
@@ -131,6 +133,7 @@ function gotPoses(poses){
             }
         }
     } else{
+        inView = 0
         confidence.innerHTML = "\n"
         closeText.innerHTML = "Please Enter Frame"
     }
@@ -164,6 +167,8 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
         for (let i = 0; i<errors.length; i++){
             avg += errors[i]
         }
+        fill(0, 255, 0)
+        rect(640, (time)*32, 659, 459)
         if (avg < 400){
             fill(0,255,0)
         } else{
@@ -192,9 +197,9 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
             //strokeWeight(5)
             //line(pose.nose.x, pose.nose.y,(pose.rightHip.x + pose.leftHip.x)/2, (pose.rightHip.y + pose.leftHip.y)/2)
 
-        } else{
+        } if(inView==0){
             fill(255, 255, 255)
-            textSize(32)
+            textSize(42)
             textFont('Verdana');
             filter(BLUR, 8);
             textAlign(CENTER);
