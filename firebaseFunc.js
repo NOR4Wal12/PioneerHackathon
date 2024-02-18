@@ -52,6 +52,7 @@ function suggestedWorkout(){
             max = info[i].value
         }
     }
+    completelyRandom = false;
     if (max == 100){
         completelyRandom = true;
     }
