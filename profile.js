@@ -143,6 +143,7 @@ function pullStretch(){
     info.splice(ind, 1);
     console.log(highestValueIds)
 
+    str = "";
     for (let i = 0; i < highestValueIds.length; i++){
         str += (i + 1) + ". " + toDisplay(highestValueIds[i]) + "</br>";
     }
