@@ -96,8 +96,12 @@ function gotPoses(poses){
         pose = poses[0].pose;
         confidence.innerHTML = pose.score
         checkDots(pose)
+        checkTo=5;
+        if(myWorkouts[0]=="easy" || myWorkouts[0]=="triangle" || myWorkouts[0]=="tree"){
+            checkTo=3
+        }
         errors.shift()
-        errors.push(getDist(pose, workoutIdeals[myWorkouts[0]]))
+        errors.push(getDist(pose, workoutIdeals[myWorkouts[0]], checkTo))
         avg = 0
         for (let i = 0; i<errors.length; i++){
             avg += errors[i]
