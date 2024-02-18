@@ -48,7 +48,7 @@ function addWorkout(name){
             current.push(name)
 
             for (let i = 0; i < current.length; i++){
-                str += (i + 1) + ". " + current[i] + "</br>";
+                str += (i + 1) + ". " + toDisplay(current[i]) + "</br>";
             }
             
             database.ref(user + '/custom').set({array:current}).then((snapshot)=>{})
