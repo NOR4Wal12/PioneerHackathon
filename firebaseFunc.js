@@ -38,6 +38,7 @@ function pullStretch(){
 
     const stretchesRef = firebase.database().ref(user+"/stretches");
     info = []
+    const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3']
 
     stretchesRef.get().then((snapshot) => {
         if (snapshot.exists()) {
