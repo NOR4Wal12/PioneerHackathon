@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Selected Workout</title>
+</head>
+<body>
+    <h1>Selected Workout</h1>
+    <div id="workoutName">Loading workout...</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const workoutNameElement = document.getElementById('workoutName');
+            const selectedWorkout = sessionStorage.getItem('selectedWorkout');
+            
+            if (selectedWorkout) {
+                workoutNameElement.textContent = selectedWorkout;
+            } else {
+                workoutNameElement.textContent = 'No workout selected.';
+            }
+        });
+    </script>
+</body>
+</html>
