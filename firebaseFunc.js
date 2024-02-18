@@ -1,5 +1,4 @@
-function pushStretchR(id){
-    r2 = document.getElementById("testFirebaseInput").value
+function pushStretchR(id, r2){
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
