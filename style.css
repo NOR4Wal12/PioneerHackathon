@@ -72,6 +72,10 @@ body{
   background-color:rgb(0, 0, 0);
   padding:10px 20px;
   font-weight:500;
+  transition: background-color 0.3s;
+}
+#loginSubmit:hover{
+  background-color:rgb(87, 86, 86);
 }
 #loginFields a:hover{
   text-decoration:underline;
@@ -231,8 +235,11 @@ body{
   border-radius:30px;
   padding:10px 20px;
   background-color: rgb(255 255 255 / 45%);
+  transition:color 0.3s;
 }
-
+#logout:hover{
+  color: rgba(230,230,230);
+}
 #profileWelcome{
   font-size:60px;
   font-weight:600;
