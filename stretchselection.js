@@ -1,6 +1,6 @@
 function previewVideo(poseName, videoFile, title, description) {
     const videoContainer = document.getElementById('videoContainer');
-    videoContainer.innerHTML = `<video src="${videoFile}" autoplay muted loop></video>`;
+    videoContainer.innerHTML = `<img src="${videoFile}"></img>`;
     
     const poseTitle = document.getElementById('poseTitle');
     const poseDescription = document.getElementById('poseDescription');
