@@ -11,12 +11,12 @@ errors = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
 
 cameraOn = 1
 dotSize = 15
-myWorkouts = sessionStorage.getItem("workout")
-if (myWorkouts[0]=="null"){
-    myWorkouts.push("warrior2")
-}
-console.log(myWorkouts)
-//myWorkouts = ["butterfly", "downwarddog", "crescent", "easy"]
+//myWorkouts = sessionStorage.getItem("workout")
+//if (myWorkouts[0]=="null"){
+//    myWorkouts.push("warrior2")
+//}
+//console.log(myWorkouts)
+myWorkouts = ["butterfly", "downwarddog", "crescent", "easy"]
 time = 15
 workoutIdeals = {
     "butterfly": [40, 40, 74, 100, 100],
