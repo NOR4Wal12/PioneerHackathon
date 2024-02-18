@@ -29,10 +29,27 @@ function pullStretch(){
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
-    database.ref(user+'/stretch').once('value').then((snapshot)=>{
-        data = snapshot.val()
-        alert(data['butterfly'])
-    })
+    
+    const testRef = firebase.database().ref(user);
+
+    id = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3']
+
+    listOfR = []
+    dict = {}
+    for (let i = 0; i < id.length; i++){
+        testRef.child("stretches/" + id[i]).get().then((snapshot) => {
+            if (snapshot.exists()) {
+                listOfR[i] = snapshot.val();
+                
+                console.log("Butterfly value:", butterflyValue);
+            } else {
+                
+            }
+        }).catch((error) => {
+            console.error("Error retrieving data:", error);
+            document.getElementById('data-container').innerText = "Error retrieving data";
+        });
+    }
 }
 
 function addWorkout(name){
