@@ -217,7 +217,7 @@ body{
 #currentStretch{
   font-size:36px;
   font-weight:500;
-  color:rgb(102, 151, 120);
+  color:rgb(77, 112, 90);
   margin:5px 0px 25px 0px;
 }
 #nextUp{
@@ -229,7 +229,7 @@ body{
 #nextStretch{
   font-size:36px;
   font-weight:500;
-  color:rgb(102, 151, 120);
+  color:rgb(77, 112, 90);
   margin:5px 0px 25px 0px;
 }
 #accuracyLabel{
