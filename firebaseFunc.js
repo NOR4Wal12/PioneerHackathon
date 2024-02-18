@@ -7,28 +7,6 @@ function pushStretchR(id, r2){
         value: r2
     }
     firebase.database().ref(user+'/stretches').push(data)
-    // if (id == "butterfly"){
-        
-    //     database.ref(user + '/stretches').push({'butterfly':r2}).then((snapshot)=>{})
-    // } else if (id == "downwarddog"){
-    //     database.ref(user + '/stretches').push({'downwarddog':r2}).then((snapshot)=>{})
-    // } else if (id == "crescent"){
-    //     database.ref(user + '/stretches').push({'crescent':r2}).then((snapshot)=>{})
-    // } else if (id == "easy"){
-    //     database.ref(user + '/stretches').push({'easy':r2}).then((snapshot)=>{})
-    // } else if (id == "triangle"){
-    //     database.ref(user + '/stretches').push({'triangle':r2}).then((snapshot)=>{})
-    // } else if (id == "reversewarrior"){
-    //     database.ref(user + '/stretches').push({'reversewarrior':r2}).then((snapshot)=>{})
-    // } else if (id == "tree"){
-    //     database.ref(user + '/stretches').push({'tree':r2}).then((snapshot)=>{})
-    // } else if (id == "warrior1"){
-    //     database.ref(user + '/stretches').push({'warrior1':r2}).then((snapshot)=>{})
-    // } else if (id == "warrior2"){
-    //     database.ref(user + '/stretches').push({'warrior2':r2}).then((snapshot)=>{})
-    // } else if (id == "warrior3"){
-    //     database.ref(user + '/stretches').push({'warrior3':r2}).then((snapshot)=>{})
-    // }
 }
 
 function pullStretch(){
@@ -43,13 +21,9 @@ function pullStretch(){
     stretchesRef.on("value", (snapshot) => {
             snapshot.forEach(function(data){
                 info.push({id:data.val().id, value:data.val().value})
-                console.log(data.val())
             })
-            console.log(info)
         }
     );
-
-    console.log(info)
 
     for (let i = 0; i < stretchIds.length; i++){
         for (let j = 0; j < info.length; j++){
@@ -71,6 +45,42 @@ function pullStretch(){
             info.push({id: stretchIds[i], value: 100})
         }
     }
+
+// Initialize variables to store highest value and IDs with highest values
+    let highestValue = Number.NEGATIVE_INFINITY;
+    let highestValueIds = [];
+    
+    // Iterate through the array to find the highest value
+    for (const item of info) {
+        if (item.value > highestValue) {
+            highestValue = item.value;
+            highestValueIds = [item.id]; // New highest value, so reset IDs array
+        } else if (item.value === highestValue) {
+            highestValueIds.push(item.id); // Add ID to IDs array if it has the same highest value
+        }
+    }
+    
+    // Randomly select three IDs from the IDs array
+    const randomIds = [];
+    while (randomIds.length < 3 && highestValueIds.length > 0) {
+        const randomIndex = Math.floor(Math.random() * highestValueIds.length);
+        const randomId = highestValueIds.splice(randomIndex, 1)[0]; // Remove selected ID from IDs array
+        randomIds.push(randomId);
+    }
+    
+    console.log("IDs with highest values:", randomIds);
+
+}
+
+// Randomly select three IDs from the IDs array
+const randomIds = [];
+while (randomIds.length < 3 && highestValueIds.length > 0) {
+    const randomIndex = Math.floor(Math.random() * highestValueIds.length);
+    const randomId = highestValueIds.splice(randomIndex, 1)[0]; // Remove selected ID from IDs array
+    randomIds.push(randomId);
+}
+
+console.log("IDs with highest values:", randomIds);
 
 }
 
