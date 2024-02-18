@@ -86,7 +86,7 @@ function loadList(){
         }
 
         if (str == ""){
-            str = Currently empty
+            str = "Currently empty"
         }
 
         document.getElementById("list").innerHTML = str;
