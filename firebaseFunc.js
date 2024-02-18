@@ -82,8 +82,6 @@ while (randomIds.length < 3 && highestValueIds.length > 0) {
 
 console.log("IDs with highest values:", randomIds);
 
-}
-
 function addWorkout(name){
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
