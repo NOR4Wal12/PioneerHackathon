@@ -1,10 +1,3 @@
-function profileLoad(){
-    if(localStorage.getItem("loggedIn")!="yes"){
-        window.location.href = "index.html";
-    }
-    loadList()
-  }
-
 function pushStretchR(id){
     r2 = document.getElementById("testFirebaseInput").value
     email = localStorage.getItem("user")
@@ -33,19 +26,9 @@ function pushStretchR(id){
     }
 }
 
-function pushCustomized(names){
-    r2 = document.getElementById("testFirebaseInput").value
-    email = localStorage.getItem("user")
-    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
-    user = user.substring(0,user.indexOf("@"))
-
-    // UNFINISHED
-}
 
 function addWorkout(name){
-    email = localStorage.getItem("user")
-    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
-    user = user.substring(0,user.indexOf("@"))
+    user = "test"
     var str = "";
     database.ref(user+'/custom').once('value').then((snapshot)=>{
         current = snapshot.val()
@@ -56,8 +39,8 @@ function addWorkout(name){
             current = current.array
         }
 
-        if (current.length >= 20) {
-            alert("Your custom workout plan has more than 20 planned stretches! This might tire you out! Try hitting the 'clear list' button to remake your custom plan!")
+        if (current.length >= 15) {
+            alert("Your custom workout plan has more than 15 planned stretches! This might tire you out! Try hitting the 'clear list' button to remake your custom plan!")
         }
         else {
             current.push(name)
@@ -74,17 +57,16 @@ function addWorkout(name){
 }
 
 function clearCustom(){
-    email = localStorage.getItem("user")
-    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
-    user = user.substring(0,user.indexOf("@"))
+    // email = localStorage.getItem("user")
+    // user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    // user = user.substring(0,user.indexOf("@"))
+    user = "test"
     database.ref(user + '/custom').set({array:[]}).then((snapshot)=>{})
-    document.getElementById("list").innerHTML = "Currently empty";
+    document.getElementById("list").innerHTML = "None currently planned!";
 }
 
 function loadList(){
-    email = localStorage.getItem("user")
-    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
-    user = user.substring(0,user.indexOf("@"))
+    user = "test"
     var str = "";
     database.ref(user+'/custom').once('value').then((snapshot)=>{
         current = snapshot.val()
@@ -100,7 +82,7 @@ function loadList(){
         }
 
         if (str == ""){
-            str = "Currently empty"
+            str = "None currently planned!"
         }
 
         document.getElementById("list").innerHTML = str;
