@@ -14,43 +14,43 @@ body{
 #loginWrapper{
   height:100%;
   display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  align-items:stretch;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
 }
-#loginHeader{
-  background-color:#3c3b6e;
-  height:10%;
+#loginLeft{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  width:30%;
+  justify-content:center;
+  align-items:center;
+}
+#loginRight{
+  height:100%;
   display:flex;
   flex-direction:row;
-  align-items:end;
-  justify-content:space-between;
+  width:70%;
+  justify-content:center;
+  align-items:center;
 }
-#loginHeader h3{
-  margin:10px;
-  font-size:20px;
-  font-weight:normal;
-  color:white;
-}
-#loginHeader a{
-  margin:5px 10px;
+#loginHeader{
   font-size:24px;
-  font-weight:normal;
-  color:white;
-  text-decoration:none;
-}
-#loginMiddle{
-  display:flex;
-  flex-direction:column;
-  height:80%;
-  justify-content:space-between;
+  font-weight:bold;
 }
 #loginFields{
   display:flex;
+  width:30%;
+  background-color:white;
   flex-direction:column;
-  margin:20px 20px;
+  align-items:center;
+  justify-content: center;
+  padding:20px 70px;
+  border-radius:10px;
+  box-shadow:0px 10px 15px;
 }
 #loginFields input{
+  width:100%;
   font-size:16px;
   background-color:rgba(0,0,0,0);
   border:none;
@@ -64,6 +64,15 @@ body{
 }
 #loginFields a{
   text-decoration:none;
+}
+#loginSubmit{
+  font-size:18px;
+  margin:5px;
+  color:white;
+  border-radius:30px;
+  background-color:rgb(0, 0, 0);
+  padding:10px 20px;
+  font-weight:500;
 }
 #loginFields a:hover{
   text-decoration:underline;
@@ -79,6 +88,7 @@ body{
 }
 #need{
   color:black;
+  font-size:20px;
 }
 #loginFields h2{
   font-size:16px;
@@ -86,7 +96,7 @@ body{
   font-weight:normal;
 }
 #errorLabel{
-  margin:5px 0px;
+  margin:3px 0px;
   font-size:18px;
   font-weight:normal;
   color:red;
@@ -96,7 +106,6 @@ body{
   display:flex;
   flex-direction:row;
   align-items:stretch;
-  border:solid black 1px;
   border-radius:3px;
   margin:20px 20px;
   justify-content:center;
@@ -105,26 +114,12 @@ body{
 #googleLoginBox h2{
   margin:0px;
   font-weight:normal;
+  color:black;
   font-size:18px;
 }
 #googleLoginBox img{
   width:25px;
   margin:0px 5px;
-}
-#loginFooter{
-  background-color:#3c3b6e;
-  height:10%;
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  justify-content:space-evenly;
-  width:100%;
-}
-#loginFooter h3{
-  margin:0px;
-  font-size:20px;
-  font-weight:normal;
-  color:white;
 }
 #homeWrapper{
   height:100%;
@@ -275,6 +270,18 @@ body{
 #hr1{
   width:80%;
   border: 2px solid rgb(255, 255, 255);
+}
+video {
+  filter: brightness(60%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 .hidden{
   opacity:0;
