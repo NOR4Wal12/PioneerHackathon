@@ -1,6 +1,6 @@
 button = document.getElementById("openSidebar")
 function openNav(){
-    document.getElementById("sidebar").style.width="300px";
+    document.getElementById("sidebar").style.width="350px";
     button.onclick = closeNav
 }
 
