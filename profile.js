@@ -95,53 +95,8 @@ function suggestedWorkout(){
     highestValueIds.push(info[randomInd].id)
     info.splice(randomInd, 1);
 
-    if (!completelyRandom){
-        sessionStorage.getItem(highestValueIds);
-        window.location.href="vision.html"
-    }
-    else {
-        stretchesRef.on("value", (snapshot) => {
-            snapshot.forEach(function(data){
-                info.push({id:data.val().id, value:data.val().value})
-                })
-            }
-        );
-    
-        for (let i = 0; i < stretchIds.length; i++){
-            temp = true;
-            for (let j = 0; j < info.length; j++){
-                if (info[j].id == stretchIds[i]){
-                    temp = false;
-                }
-            }
-            if (temp){
-                info.push({id: stretchIds[i], value: 100})
-            }
-        }
-
-        highestValueIds = []
-
-        console.log(info)
-
-        randomInd = Math.floor(Math.random() * info.length);
-        highestValueIds.push(info[randomInd].id)
-        info.splice(randomInd, 1);
-        randomInd = Math.floor(Math.random() * info.length);
-        highestValueIds.push(info[randomInd].id)
-        info.splice(randomInd, 1);
-        randomInd = Math.floor(Math.random() * info.length);
-        highestValueIds.push(info[randomInd].id)
-        info.splice(randomInd, 1);
-        randomInd = Math.floor(Math.random() * info.length);
-        highestValueIds.push(info[randomInd].id)
-        info.splice(randomInd, 1);
-        randomInd = Math.floor(Math.random() * info.length);
-        highestValueIds.push(info[randomInd].id)
-        info.splice(randomInd, 1);
-
-        sessionStorage.getItem(highestValueIds);
-        window.location.href="vision.html"
-    }
+    sessionStorage.getItem(highestValueIds);
+    window.location.href="vision.html"
     
 }
 
