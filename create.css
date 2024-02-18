@@ -1,0 +1,88 @@
+@font-face {
+    font-family: ObjectSans;
+    font-weight: bold;
+    src: url("ObjectSans-Heavy.otf") format("opentype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    background-size: cover;
+    background-image: url("bg.jpg");
+    margin: 0;
+    padding: 0;
+    font-family: 'Object Sans', sans-serif;
+}
+
+#loginWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+#loginWrapper > div {
+    padding: 0px 0px 40px 20px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+}
+
+#loginWrapper > div:first-child {
+    flex-basis: 30%; /* Make the left div smaller */
+}
+
+#loginWrapper > div:nth-child(2) {
+    flex-basis: 45%; /* Keep the second div's width or adjust as needed */
+}
+
+.btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #4300fc;
+    color: #fff;
+}
+
+.btnclear {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btnclear:hover {
+    background-color: #4300fc;
+    color: #000000;
+}
+
+h2 {
+    font-family: 'ObjectSans', sans-serif;
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
