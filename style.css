@@ -345,9 +345,9 @@ body{
 }
 #hiText{
   font-family: "Red Hat Display";
-  font-size:500px;
+  font-size:50px;
   font-weight:800;
-  margin: 0px 0px 40px 0px;
+  margin: 0px 0px 40px 60px;
   color:rgb(255, 255, 255)
 }
 #startStretch{
@@ -383,7 +383,7 @@ body{
 #sideMain{
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:left;
   align-items:center;
 }
 #sideMain hr{
