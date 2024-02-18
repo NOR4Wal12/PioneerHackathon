@@ -26,6 +26,9 @@ body{
   justify-content:center;
   align-items:center;
 }
+#loginImg{
+  width:100px;
+}
 #loginRight{
   height:100%;
   display:flex;
