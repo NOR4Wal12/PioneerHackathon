@@ -59,7 +59,7 @@ function pullStretch(){
         // document.getElementById('result').innerText = "Error fetching data";
     });
 
-    console.log(stretchIds)
+    // console.log(stretchIds)
     
     // const reference = firebase.database().ref(user);
     // const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3'];
