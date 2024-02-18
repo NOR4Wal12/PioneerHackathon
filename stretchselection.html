@@ -1,39 +1,30 @@
-body {
-  font-family: "Lato", sans-serif;
-}
-
-.sidenav {
-  height: 100%;
-  width: 650px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-.sidenav a {
-  font-family: Calibri;
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 35px;
-  color: #818181;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 650px;
-  font-size: 28px;
-  padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="stylemenu.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pose Selection</title>
+  </head>
+  <body>
+    <div class="sidenav">
+        <a href="#" onmouseover="previewVideo('butterfly', 'butterfly.mp4')" onclick="workout('butterfly')">Butterfly Pose</a>
+        <a href="#" onmouseover="previewVideo('camel', 'camel.mp4')" onclick="workout('camel')">Camel Pose</a>
+        <a href="#" onmouseover="previewVideo('crescent', 'crescent.mp4')" onclick="workout('crescent')">Crescent Pose</a>
+        <a href="#" onmouseover="previewVideo('easy', 'easy.mp4')" onclick="workout('easy')">Easy Pose</a>
+        <a href="#" onmouseover="previewVideo('triangle', 'triangle.mp4')" onclick="workout('triangle')">Triangle Pose</a>
+        <a href="#" onmouseover="previewVideo('reversewarrior', 'rw.mp4')" onclick="workout('reversewarrior')">Reverse Warrior Pose</a>
+        <a href="#" onmouseover="previewVideo('tree', 'tree.mp4')" onclick="workout('tree')">Tree Pose</a>
+        <a href="#" onmouseover="previewVideo('warrior1', 'w1.mp4')" onclick="workout('warrior1')">Warrior 1 Pose</a>
+        <a href="#" onmouseover="previewVideo('warrior2', 'w2.mp4')" onclick="workout('warrior2')">Warrior 2 Pose</a>
+        <a href="#" onmouseover="previewVideo('warrior3', 'w3.mp4')" onclick="workout('warrior3')">Warrior 3 Pose</a>
+  </div>
+    <div class="main">
+      <h2>Sidebar</h2>
+      <p>This sidebar is of full height (100%) and always shown.</p>
+    </div>
+    <div class="main" id="videoContainer"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
