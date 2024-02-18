@@ -37,6 +37,7 @@ function addWorkout(name){
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
+    var str = "";
     database.ref(user+'/custom').once('value').then((snapshot)=>{
         current = snapshot.val()
         if (current == null){
@@ -45,21 +46,15 @@ function addWorkout(name){
         else {
             current = current.array
         }
-        database.ref(user + '/custom').set({array:current}).then((snapshot)=>{})
-    })
+        current.push(name)
 
-    var str = "";
-    database.ref(user + '/custom').once('value',(snapshot)=>{
-        var index = 1;
-        if (current != null) {
-            snapshot.forEach(function(data){
-                // str = "\t" + data.val().message + "<br/>" + str;
-                str += index + "." + data.val().message + "<br/>";
-                index++;
-            });
-            document.getElementById("list").innerHTML = str;
+        for (let i = 0; i < current.length; i++){
+            str += (i + 1) + ". " + current[i];
         }
-    });
+        
+        database.ref(user + '/custom').set({array:current}).then((snapshot)=>{})
+        document.getElementById("list").innerHTML = str;
+    })
 }
 
 function clearCustom(){
