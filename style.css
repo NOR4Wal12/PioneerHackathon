@@ -177,7 +177,30 @@ body{
   align-items:center;
   height:75%;
   width:90%;
-  
+}
+#workoutDone{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width:50%;
+  height:90%;
+  background-color:rgb(255 255 255 / 45%);
+  border-radius:20px;
+}
+#done2{
+  font-size:36px;
+  font-weight:350;
+  color:rgb(53, 45, 45);
+  border-radius:30px;
+  background-color:rgb(207, 152, 171);
+  padding:15px 30px;
+  transition:background-color 0.3s, color 0.3s;
+}
+#done1{
+  font-size:60px;
+  font-weight:500;
+  color:rgb(53, 45, 45);
 }
 #workoutTopRight{
   display:flex;
