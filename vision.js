@@ -60,8 +60,10 @@ function gotPoses(poses){
                 currentStretch.innerHTML = myWorkouts[0]
                 if (myWorkouts.length > 1){
                     nextStretch.innerHTML = myWorkouts[1]
+                } else{
+                    nextStretch.innerHTML = ""
                 }
-                stretchesLeft.innerHTML = myWorkouts.length
+                //stretchesLeft.innerHTML = myWorkouts.length
             }
         }
     } else{
