@@ -7,6 +7,12 @@ const timer = document.getElementById("timer")
 const currentStretch = document.getElementById("currentStretch")
 const nextStretch = document.getElementById("nextStretch")
 const accuracy = document.getElementById("accuracy")
+const rleg = document.getElementById("rleg")
+const lleg = document.getElementById("lleg")
+const hip = document.getElementById("hip")
+const rarm = document.getElementById("rarm")
+const larm = document.getElementById("larm")
+
 cameraOn = 1
 dotSize = 20
 //myWorkouts = sessionStorage.getItem("workout")
@@ -52,9 +58,21 @@ function gotPoses(poses){
         pose = poses[0].pose;
         confidence.innerHTML = pose.score
         checkDots(pose)
-        //angle.innerHTML = getAngle(pose.rightWrist.x, pose.rightWrist.y, 
-        //    pose.rightShoulder.x, pose.rightHip.y, 
-        //    pose.rightKnee.x, pose.rightKnee.y)
+        rarm.innerHTML = "right arm: " + getAngle(pose.rightWrist.x, pose.rightWrist.y, 
+            pose.rightShoulder.x, pose.rightShoulder.y, 
+            pose.rightHip.x, pose.rightHip.y)
+        larm.innerHTML = "left arm: " + getAngle(pose.leftWrist.x, pose.leftWrist.y, 
+            pose.leftShoulder.x, pose.leftShoulder.y, 
+            pose.leftHip.x, pose.leftHip.y)
+        rleg.innerHTML = "right leg: " + getAngle(pose.rightHip.x, pose.rightHip.y, 
+            pose.rightKnee.x, pose.rightKnee.y, 
+            pose.rightAnkle.x, pose.rightAnkle.y)
+        lleg.innerHTML = "left leg: " + getAngle(pose.leftHip.x, pose.leftHip.y, 
+            pose.leftKnee.x, pose.leftKnee.y, 
+            pose.leftAnkle.x, pose.leftAnkle.y)
+        hip.innerHTML = "hip: " + getAngle(pose.leftKnee.x, pose.leftKnee.y,
+            pose.leftHip.x, pose.leftHip.y, 
+            pose.leftShoulder.x, pose.leftShoulder.y)
         time -= 0.2
         timer.innerHTML = "Time Remaining: " + Math.round(time)
         if (time <= 0.2){
@@ -96,7 +114,7 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
     b=Math.sqrt((Ax - Bx)**2 + (Ay - By)**2)
     a=Math.sqrt((Cx - Bx)**2 + (Cy - By)**2)
     c=Math.sqrt((Ax - Cx)**2 + (Ay - Cy)**2)
-    return Math.acos((a**2 + b**2 - c**2) / (2 * a * b))
+    return 57.3 * Math.acos((a**2 + b**2 - c**2) / (2 * a * b))
 }
 
   function draw() {
