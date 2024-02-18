@@ -2,6 +2,7 @@ let video;
 let poseNet;
 let pose;
 let inView = 1
+let ticks = 0
 const closeText = document.getElementById("tooCloseText")
 const confidence = document.getElementById("confidence")
 const timer = document.getElementById("timer")
@@ -44,7 +45,6 @@ if (myWorkouts.length > 1){
 function setup() {
     var canvas = createCanvas(680, 480);
     canvas.parent('workoutLeft')
-    video = createCapture(VIDEO)
     video.hide()
     poseNet = ml5.poseNet(video, modelLoaded)
     poseNet.on('pose', gotPoses)
@@ -116,8 +116,11 @@ function gotPoses(poses){
         } else{
             time -= 0.01
         }
+        ticks += 1;
+        
         timer.innerHTML = "Time Remaining: " + Math.round(time)
         if (time <= 0.2){
+            pushStretchR(myWorkouts[0], ticks);
             myWorkouts.shift(1)
             time=15
             if (myWorkouts.length == 0){
@@ -209,3 +212,4 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
     } 
     
   }
+
