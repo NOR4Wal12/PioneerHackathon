@@ -30,22 +30,31 @@
                 <button id="openSidebar" onclick="openNav()">&#9776;</button>
             </div>
             <div id="createLeft">
-                <h2>Current List:</h2>
-                <h3 id="list">None currently planned!</h3>
+                <p id="yourExercise">Current Exercises:</p>
+                <hr id="hr2">
+                <p id="list">No exercises planned!</p>
             </div>
             <div id="createRight">
                 <p id="addExercise">Add an Exercise</p>
-                <button class="btn" id="1" onclick="addWorkout('butterfly')">Add Butterfly Pose</button>
-                <button class="btn" id="2" onclick="addWorkout('downwarddog')">Add Downward Dog Pose</button>
-                <button class="btn" id="3" onclick="addWorkout('crescent')">Add Crescent Pose</button>
-                <button class="btn" id="4" onclick="addWorkout('easy')">Add Easy Pose</button>
-                <button class="btn" id="5" onclick="addWorkout('triangle')">Add Triangle</button>
-                <button class="btn" id="6" onclick="addWorkout('reversewarrior')">Add Reverse Warrior</button>
-                <button class="btn" id="7" onclick="addWorkout('tree')">Add Tree Pose</button>
-                <button class="btn" id="8" onclick="addWorkout('warrior1')">Add Star Pose</button>
-                <button class="btn" id="9" onclick="addWorkout('warrior2')">Add Warrior II Pose</button>
-                <button class="btn" id="10" onclick="addWorkout('warrior3')">Add Warrior III Pose</button>
-                <button class="btnclear" id="easteregg" onclick="clearCustom()">Clear Lists</button>
+                <hr id="hr2">
+                <div id="poseArray">
+                    <div class="poseCol">
+                        <button class="btn" id="1" onclick="addWorkout('butterfly')">Add Butterfly Pose</button>
+                        <button class="btn" id="2" onclick="addWorkout('downwarddog')">Add Downward Dog Pose</button>
+                        <button class="btn" id="3" onclick="addWorkout('crescent')">Add Crescent Pose</button>
+                        <button class="btn" id="4" onclick="addWorkout('easy')">Add Easy Pose</button>
+                        <button class="btn" id="5" onclick="addWorkout('triangle')">Add Triangle</button>
+                        <p>asodhf</p>
+                    </div>
+                    <div class="poseCol">
+                        <button class="btn" id="6" onclick="addWorkout('reversewarrior')">Add Reverse Warrior</button>
+                        <button class="btn" id="7" onclick="addWorkout('tree')">Add Tree Pose</button>
+                        <button class="btn" id="8" onclick="addWorkout('warrior1')">Add Star Pose</button>
+                        <button class="btn" id="9" onclick="addWorkout('warrior2')">Add Warrior II Pose</button>
+                        <button class="btn" id="10" onclick="addWorkout('warrior3')">Add Warrior III Pose</button>
+                        <button class="btnclear" id="easteregg" onclick="clearCustom()">Clear Lists</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

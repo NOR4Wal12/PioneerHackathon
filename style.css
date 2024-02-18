@@ -177,14 +177,36 @@ body{
   flex-direction:column;
   align-items:start;
   justify-content:start;
+  background-color:rgb(255 255 255 / 45%);
+  border-radius:20px;
+  margin: 20px 20px;
+  padding:20px 25px;
 }
-#createLeft{
+#createRight{
   height:100%;
-  width:33%;
+  width:66%;
   display:flex;
   flex-direction:column;
   align-items:start;
   justify-content:start;
+  background-color:rgb(255 255 255 / 45%);
+  border-radius:20px;
+  margin: 20px 20px;
+  padding:20px 25px;
+}
+#poseArray{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+}
+.poseCol{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:start;
+  height:100%;
 }
 #bgFilter{
   height:100%;
