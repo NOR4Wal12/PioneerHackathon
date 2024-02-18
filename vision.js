@@ -54,7 +54,7 @@ currentStretch.innerHTML = toDisplay(myWorkouts[0])
 if (myWorkouts.length > 1){
     nextStretch.innerHTML = toDisplay(myWorkouts[1])
 } else{
-    nextStretch.innerHTML = ""
+    nextStretch.innerHTML = "Workout complete!"
 }
 
 function setup() {
@@ -147,7 +147,7 @@ function gotPoses(poses){
                 if (myWorkouts.length > 1){
                     nextStretch.innerHTML = toDisplay(myWorkouts[1])
                 } else{
-                    nextStretch.innerHTML = ""
+                    nextStretch.innerHTML = "Workout complete!"
                 }
                 //stretchesLeft.innerHTML = myWorkouts.length
             }
