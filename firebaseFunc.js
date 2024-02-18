@@ -3,25 +3,25 @@ function pushStretchR(id, r2){
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
     if (id == "butterfly"){
-        database.ref(user + '/stretches').set({'butterfly':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'butterfly':r2}).then((snapshot)=>{})
     } else if (id == "downwarddog"){
-        database.ref(user + '/stretches').set({'downwarddog':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'downwarddog':r2}).then((snapshot)=>{})
     } else if (id == "crescent"){
-        database.ref(user + '/stretches').set({'crescent':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'crescent':r2}).then((snapshot)=>{})
     } else if (id == "easy"){
-        database.ref(user + '/stretches').set({'easy':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'easy':r2}).then((snapshot)=>{})
     } else if (id == "triangle"){
-        database.ref(user + '/stretches').set({'triangle':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'triangle':r2}).then((snapshot)=>{})
     } else if (id == "reversewarrior"){
-        database.ref(user + '/stretches').set({'reversewarrior':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'reversewarrior':r2}).then((snapshot)=>{})
     } else if (id == "tree"){
-        database.ref(user + '/stretches').set({'tree':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'tree':r2}).then((snapshot)=>{})
     } else if (id == "warrior1"){
-        database.ref(user + '/stretches').set({'warrior1':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'warrior1':r2}).then((snapshot)=>{})
     } else if (id == "warrior2"){
-        database.ref(user + '/stretches').set({'warrior2':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'warrior2':r2}).then((snapshot)=>{})
     } else if (id == "warrior3"){
-        database.ref(user + '/stretches').set({'warrior3':r2}).then((snapshot)=>{})
+        database.ref(user + '/stretches').push({'warrior3':r2}).then((snapshot)=>{})
     }
 }
 
