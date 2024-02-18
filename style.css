@@ -266,12 +266,12 @@ body{
   margin:10px 0px;
   color:rgb(61, 53, 53);
 }
-.profileBox hr{
+.hr2{
   width:80%;
   border: solid 1px rgb(61, 53, 53);
   margin:0px 0px 20px 0px;
 }
-#profileMain hr{
+#hr1{
   width:80%;
   border: 2px solid rgb(255, 255, 255);
 }
