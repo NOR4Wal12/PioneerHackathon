@@ -1,7 +1,4 @@
 let video;
-let temp;
-let temp2;
-let temp3;
 let poseNet;
 let pose;
 const closeText = document.getElementById("tooCloseText")
