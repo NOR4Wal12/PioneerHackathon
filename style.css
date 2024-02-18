@@ -170,21 +170,21 @@ body{
   background-size:cover;
   background-position:center;
 }
-#workoutLeft{
+#workoutTop{
   display:flex;
-  flex-direction:column;
-  justify-content:start;
+  flex-direction:row;
+  justify-content:center;
   align-items:center;
-  height:100%;
-  width:60%;
+  height:75%;
+  width:100%;
 }
-#workoutRight{
+#workoutBottom{
   display:flex;
-  flex-direction:column;
-  justify-content:start;
+  flex-direction:row;
+  justify-content:center;
   align-items:center;
-  height:100%;
-  width:60%;
+  height:25%;
+  width:100%;
 }
 #createWrapper{
   height:100%;
