@@ -59,6 +59,19 @@ function pullStretch(){
         // document.getElementById('result').innerText = "Error fetching data";
     });
 
+    console.log(info)
+
+    for (let i = 0; i < stretchIds.length; i++){
+        for (let j = 0; j < info.length; j++){
+            if (info[j].id == stretchIds[i]){
+                break
+            }
+        }
+        info.push{id: stretchIds[i], value: 100}
+    }
+
+    console.log(info)
+
     // console.log(stretchIds)
     
     // const reference = firebase.database().ref(user);
