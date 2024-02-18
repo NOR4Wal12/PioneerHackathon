@@ -92,7 +92,7 @@ function suggestedWorkout(){
     highestValueIds.push(info[randomInd].id)
     info.splice(randomInd, 1);
 
-    sessionStorage.getItem(highestValueIds);
+    sessionStorage.setItem("workout", highestValueIds);
     window.location.href="vision.html"
     
 }
