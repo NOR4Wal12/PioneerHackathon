@@ -28,7 +28,9 @@ function pushStretchR(id){
 
 
 function addWorkout(name){
-    user = "test"
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
     var str = "";
     database.ref(user+'/custom').once('value').then((snapshot)=>{
         current = snapshot.val()
