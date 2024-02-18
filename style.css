@@ -168,7 +168,7 @@ body{
 }
 #homeMain hr{
   width:100%;
-  border: solid 3px rgb(37, 37, 37);
+  border: solid 3px rgb(255, 255, 255);
 }
 #sidebar{
   background-color:rgb(76, 92, 128);
