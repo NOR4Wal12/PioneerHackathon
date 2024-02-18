@@ -4,7 +4,7 @@ const nameField = document.getElementById("nameField")
 var passwordField = document.getElementById("passwordField")
 const googleLogin = document.getElementById('googleLoginBox')
 const errorLabel = document.getElementById('errorLabel')
-document.getElementById('video').playbackRate = 0.6;
+//document.getElementById('video').playbackRate = 0.6;
 passwordField.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
       event.preventDefault();
