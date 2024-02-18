@@ -65,6 +65,27 @@ function clearCustom(){
     document.getElementById("list").innerHTML = "Currently empty";
 }
 
+function loadList(){
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
+    var str = "";
+    database.ref(user+'/custom').once('value').then((snapshot)=>{
+        current = snapshot.val()
+        if (current == null){
+            current = []
+        }
+        else {
+            current = current.array
+        }
+
+        for (let i = 0; i < current.length; i++){
+            str += (i + 1) + ". " + current[i] + "</br>";
+        }
+
+        document.getElementById("list").innerHTML = str;
+    })
+}
 
 // function loadTextFromDatabase(){
 //     var dbRef = firebase.database().ref().child("messagesAndNames");
