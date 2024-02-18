@@ -17,6 +17,12 @@ dotSize = 15
 //    myWorkouts.push("warrior2")
 //}
 //console.log(myWorkouts)
+function visionLoad(){
+    if(localStorage.getItem("loggedIn")!="yes"){
+        window.location.href = "index.html";
+    }
+    
+}
 myWorkouts = ["butterfly", "downwarddog", "crescent", "easy"]
 time = 15
 workoutIdeals = {
