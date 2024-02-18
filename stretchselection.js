@@ -11,5 +11,5 @@ function previewVideo(poseName, videoFile, title, description) {
 
 function workout(poseName) {
     sessionStorage.setItem('workout', poseName);
-    window.location.href = 'displayworkout.html';
+    window.location.href = 'vision.html';
 }
