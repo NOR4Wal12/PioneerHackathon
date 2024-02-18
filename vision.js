@@ -52,7 +52,7 @@ function gotPoses(poses){
         time -= 0.2
         timer.innerHTML = "Time Remaining: " + Math.round(time)
         if (time <= 0.2){
-            myWorkouts.slice(1)
+            myWorkouts.shift(1)
             time=15
             if (myWorkouts.length == 0){
                 window.location.href = "index.html"
