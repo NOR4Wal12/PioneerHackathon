@@ -7,10 +7,12 @@ const timer = document.getElementById("timer")
 const currentStretch = document.getElementById("currentStretch")
 const nextStretch = document.getElementById("nextStretch")
 const accuracy = document.getElementById("accuracy")
+errors = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
 
 cameraOn = 1
 dotSize = 20
 //myWorkouts = sessionStorage.getItem("workout")
+//console.log(myWorkouts)
 myWorkouts = ["butterfly", "downwarddog", "crescent", "easy"]
 time = 15
 workoutIdeals = {
@@ -43,7 +45,7 @@ function setup() {
     poseNet.on('pose', gotPoses)
   }
 
-function getDist(pose, currWorkout){
+function getDist(pose, currWorkout, checkTo){
     angles = [0, 0, 0, 0, 0]
     diff=0;
     angles[3] = getAngle(pose.rightWrist.x, pose.rightWrist.y, 
@@ -62,19 +64,20 @@ function getDist(pose, currWorkout){
         pose.leftHip.x, pose.leftHip.y, 
         pose.leftShoulder.x, pose.leftShoulder.y)
     //console.log(angles[2])
-    for (let i=0; i<5; i++){
+    for (let i=0; i<checkTo; i++){
         //console.log((angles[i] - currWorkout[i]))
         diff += (angles[i] - currWorkout[i])**2
     }
-    accuracy.innerHTML = Math.sqrt(diff)
+    proximity = 100 / (1 + 0.1 * Math.pow(1.1, Math.sqrt(diff)-35))
+    accuracy.innerHTML = proximity
+    return Math.sqrt(diff)
 }
 
 function checkDots(pose){
     allGood = true;
     Lespos = [pose.nose.confidence, pose.rightHip.confidence, pose.leftHip.confidence, 
-          pose.rightWrist.confidence, pose.leftWrist.confidence, pose.rightShoulder.confidence, 
-          pose.leftShoulder.confidence, pose.rightKnee.confidence, pose.leftKnee.confidence, 
-          pose.rightAnkle.confidence, pose.leftAnkle.confidence]
+              pose.rightShoulder.confidence, pose.leftShoulder.confidence, pose.rightKnee.confidence, 
+              pose.leftKnee.confidence, pose.rightAnkle.confidence, pose.leftAnkle.confidence]
     for (let i = 0; i<Lespos.length; i++){
         if (Lespos[i] < 0.1){
             closeText.innerHTML = "Please make sure your entire body is in frame"
@@ -93,8 +96,17 @@ function gotPoses(poses){
         pose = poses[0].pose;
         confidence.innerHTML = pose.score
         checkDots(pose)
-        getDist(pose, workoutIdeals[myWorkouts[0]])
-        time -= 0
+        errors.shift()
+        errors.push(getDist(pose, workoutIdeals[myWorkouts[0]]))
+        avg = 0
+        for (let i = 0; i<errors.length; i++){
+            avg += errors[i]
+        }
+        if (avg < 400){
+            time -= 0.2
+        } else{
+            time -= 0.1
+        }
         timer.innerHTML = "Time Remaining: " + Math.round(time)
         if (time <= 0.2){
             myWorkouts.shift(1)
@@ -142,28 +154,38 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
     if (cameraOn == 1){
         background(220);
         image(video, 0, 0)
-        if (pose) {
+        //strokeWeight(1)
+        for (let i = 0; i<errors.length; i++){
+            avg += errors[i]
+        }
+        if (avg < 400){
+            fill(0,255,0)
+        } else{
             fill(255,0,0)
+        }
+        if (pose) {
             ellipse(pose.nose.x, pose.nose.y, dotSize)
             ellipse((pose.rightHip.x + pose.leftHip.x)/2, (pose.rightHip.y + pose.leftHip.y)/2, dotSize)
-            
+
             ellipse(pose.rightWrist.x, pose.rightWrist.y, dotSize)
             ellipse(pose.leftWrist.x, pose.leftWrist.y, dotSize)
             
             ellipse(pose.rightShoulder.x, pose.rightShoulder.y, dotSize)
             ellipse(pose.leftShoulder.x, pose.leftShoulder.y, dotSize)
-            fill(0,255,0)
+            
             ellipse(pose.rightKnee.x, pose.rightKnee.y, dotSize)
-            fill(255,0,0)
             ellipse(pose.leftKnee.x, pose.leftKnee.y, dotSize)
-            fill(0,250,0)
+
             ellipse(pose.rightAnkle.x, pose.rightAnkle.y, dotSize)
-            fill(255,0,0)
             ellipse(pose.leftAnkle.x, pose.leftAnkle.y, dotSize)
-            fill(0,250,0)
+
             ellipse(pose.rightHip.x, pose.rightHip.y, dotSize)
-            fill(255,0,0)
             ellipse(pose.leftHip.x, pose.leftHip.y, dotSize)
+
+            //fill(0, 0, 0)
+            //strokeWeight(5)
+            //line(pose.nose.x, pose.nose.y,(pose.rightHip.x + pose.leftHip.x)/2, (pose.rightHip.y + pose.leftHip.y)/2)
+
         } 
     } 
     
