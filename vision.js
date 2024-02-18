@@ -12,7 +12,7 @@ errors = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
 cameraOn = 1
 dotSize = 15
 myWorkouts = sessionStorage.getItem("workout")
-if (myWorkouts.length == 0){
+if (myWorkouts == null){
     myWorkouts.push("warrior2")
 }
 console.log(myWorkouts)
@@ -160,7 +160,6 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
     if (cameraOn == 1){
         background(220);
         image(video, 0, 0)
-        //strokeWeight(1)
         avg=0
         for (let i = 0; i<errors.length; i++){
             avg += errors[i]
@@ -193,7 +192,12 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
             //strokeWeight(5)
             //line(pose.nose.x, pose.nose.y,(pose.rightHip.x + pose.leftHip.x)/2, (pose.rightHip.y + pose.leftHip.y)/2)
 
-        } 
+        } else{
+            fill(0, 0, 0)
+            filter(BLUR, 3);
+            textAlign(CENTER);
+            text('Please Enter Frame', 340, 240);
+        }
     } 
     
   }
