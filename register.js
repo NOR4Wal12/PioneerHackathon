@@ -50,7 +50,7 @@ googleLogin.onclick = (event) => {
         localStorage.setItem("user", email)
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"))
-        database.ref(user+'/status').set({"name": name}).then(()=>{
+        database.ref(user+'/data').set({"name": name}).then(()=>{
             window.location.href="home.html"
         }) 
     }).catch(function(error) {

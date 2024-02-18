@@ -16,6 +16,8 @@ loginButton.onclick = (event) =>{
     errorLabel.innerHTML = "."; 
     const email = emailField.value
     const password = passwordField.value
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
     database.ref(user+'/data').once('value').then((snapshot)=>{
         data = snapshot.val()
         name = data.name
