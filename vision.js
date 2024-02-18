@@ -11,7 +11,7 @@ const accuracy = document.getElementById("accuracy")
 
 dotSize = 20
 //myWorkouts = sessionStorage.getItem("workout")
-myWorkouts = ["butterfly", "dave", "Ben", "jeff"]
+myWorkouts = ["butterfly", "dave", "Ben", "Jeff"]
 timer = 15
 
 function setup() {
