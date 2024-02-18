@@ -14,7 +14,7 @@
     <script src="firebaseFunc.js" defer></script>
     <title>Profile</title>
 </head>
-<body onload="check()">
+<body onload="profileLoad()">
     <div id="profileWrapper">
         <div id="bg">
             <div id="homeSide">
@@ -33,7 +33,7 @@
                 <div class="profileBox">
                     <h1>Current workout plan</h1>
                     <hr>
-                    <p>The plan</p>
+                    <p id="list">The plan</p>
                 </div>
                 <div class="profileBox">
                     <h1>Suggested stretches</h1>

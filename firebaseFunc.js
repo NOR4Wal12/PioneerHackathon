@@ -1,4 +1,9 @@
-
+function profileLoad(){
+    if(localStorage.getItem("loggedIn")!="yes"){
+        window.location.href = "index.html";
+    }
+    loadList()
+  }
 
 function pushStretchR(id){
     r2 = document.getElementById("testFirebaseInput").value
