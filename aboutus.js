@@ -4,6 +4,7 @@ function openNav(){
     button.onclick = closeNav
 }
 
+
 function closeNav(){
     document.getElementById("sidebar").style.width="0";
     button.onclick = openNav
