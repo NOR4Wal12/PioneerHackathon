@@ -60,6 +60,8 @@ function loadList(){
             current = current.array
         }
 
+        sessionStorage.setItem("workout", current)
+
         for (let i = 0; i < current.length; i++){
             str += (i + 1) + ". " + toDisplay(current[i]) + "</br>";
         }
