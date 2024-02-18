@@ -49,7 +49,7 @@ function addWorkout(name){
             current = current.array
         }
 
-        if (current.length == 20) {
+        if (current.length >= 20) {
             alert("Your custom workout plan has more than 20 planned stretches! This might tire you out! Try hitting the 'clear list' button to remake your custom plan!")
         }
         else {
