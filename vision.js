@@ -6,7 +6,7 @@ const confidence = document.getElementById("confidence")
 const timer = document.getElementById("timer")
 const currentStretch = document.getElementById("currentStretch")
 const nextStretch = document.getElementById("nextStretch")
-const StretchesLeft = document.getElementById("StretchesLeft")
+const stretchesLeft = document.getElementById("stretchesLeft")
 const accuracy = document.getElementById("accuracy")
 
 dotSize = 20
@@ -62,7 +62,7 @@ function gotPoses(poses){
                 if (myWorkouts.length > 1){
                     nextStretch.innerHTML = myWorkouts[1]
                 }
-                StretchesLeft.innerHTML = myWorkouts.length
+                stretchesLeft.innerHTML = myWorkouts.length
             }
         }
     } else{
