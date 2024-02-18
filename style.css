@@ -217,6 +217,17 @@ body{
   z-index: 1;
   transition: 0.5s;
 }
+.sidebarLink{
+  width:100%;
+  transition: background-color 0.3s;
+}
+.sidebarLink:hover{
+  background-color:rgba(255, 255, 255, 0.103);
+}
+.sidebarImg{
+  width:40px;
+  padding: 30px 10px;
+}
 #sidebar a{
   font-family: "Red Hat Display", sans-serif;
   font-weight:400;
@@ -225,11 +236,6 @@ body{
   text-decoration:none;
   margin:0px;
   padding: 30px 10px;
-  width:100%;
-  transition: background-color 0.3s;
-}
-#sidebar a:hover{
-  background-color:rgba(255, 255, 255, 0.103)
 }
 #openSidebar{
   display:flex;
