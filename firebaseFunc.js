@@ -91,6 +91,9 @@ function toDisplay(id){
 }
 
 function loadList(){
+    if(localStorage.getItem("loggedIn")!="yes"){
+      window.location.href = "index.html";
+    }
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
