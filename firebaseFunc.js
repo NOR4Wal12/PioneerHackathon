@@ -48,14 +48,21 @@ function addWorkout(name){
         else {
             current = current.array
         }
-        current.push(name)
 
-        for (let i = 0; i < current.length; i++){
-            str += (i + 1) + ". " + current[i] + "</br>";
+        if (current.length == 20) {
+            alert("Your custom workout plan has more than 20 planned stretches! This might tire you out! Try hitting the 'clear list' button to remake your custom plan!")
+        }
+        else {
+            current.push(name)
+
+            for (let i = 0; i < current.length; i++){
+                str += (i + 1) + ". " + current[i] + "</br>";
+            }
+            
+            database.ref(user + '/custom').set({array:current}).then((snapshot)=>{})
+            document.getElementById("list").innerHTML = str;
         }
         
-        database.ref(user + '/custom').set({array:current}).then((snapshot)=>{})
-        document.getElementById("list").innerHTML = str;
     })
 }
 
