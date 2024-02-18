@@ -40,7 +40,7 @@ function pullStretch(){
                 const value = snapshot.exists() ? snapshot.val() : 100;
                 return { id: snapshot.key, value };
             });
-            stretchData.sort((a, b) => a.value - b.value); // Sort in ascending order
+            stretchData.sort((a, b) => b.value - a.value); // Sort in ascending order
             console.log("Stretches in ascending order:", stretchData);
         })
         .catch(error => {
