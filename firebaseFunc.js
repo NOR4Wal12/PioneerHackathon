@@ -66,6 +66,30 @@ function clearCustom(){
     document.getElementById("list").innerHTML = "None currently planned!";
 }
 
+function toDisplay(id){
+    if (id == 'butterfly'){
+        return "Butterfly Pose"
+    } else if (id == 'downwarddog'){
+        return "Downward Dog Pose"
+    } else if (id == 'crescent'){
+        return "Crescent Pose"
+    } else if (id == 'easy'){
+        return "Easy Pose"
+    } else if (id == 'triangle'){
+        return "Triangle Pose"
+    } else if (id == 'reversewarrior'){
+        return "Reverse Warrior Pose"
+    } else if (id == 'tree'){
+        return "Tree Pose"
+    } else if (id == 'warrior1'){
+        return "Star Pose"
+    } else if (id == 'warrior2'){
+        return "Warrior II Pose"
+    }else if (id == 'warrior3'){
+        return "Warrior III Pose"
+    }
+}
+
 function loadList(){
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
@@ -81,7 +105,7 @@ function loadList(){
         }
 
         for (let i = 0; i < current.length; i++){
-            str += (i + 1) + ". " + current[i] + "</br>";
+            str += (i + 1) + ". " + toDisplay(current[i]) + "</br>";
         }
 
         if (str == ""){
