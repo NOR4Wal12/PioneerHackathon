@@ -16,6 +16,10 @@ loginButton.onclick = (event) =>{
     errorLabel.innerHTML = "."; 
     const email = emailField.value
     const password = passwordField.value
+    database.ref(user+'/data').once('value').then((snapshot)=>{
+        data = snapshot.val()
+        name = data.name
+    })
 firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     localStorage.setItem("loggedIn","yes")
