@@ -25,6 +25,15 @@ function pushStretchR(id, r2){
     }
 }
 
+function pullStretch(){
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
+    database.ref(user+'/stretch').once('value').then((snapshot)=>{
+        data = snapshot.val()
+        alert(data['butterfly'])
+    })
+}
 
 function addWorkout(name){
     email = localStorage.getItem("user")
