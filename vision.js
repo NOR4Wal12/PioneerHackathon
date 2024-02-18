@@ -33,7 +33,7 @@ function visionLoad(){
     }
 
 }
-myWorkouts = ["butterfly", "downwarddog", "crescent", "easy"]
+myWorkouts = selectedWorkout
 time = 15
 workoutIdeals = {
     "butterfly": [40, 40, 74, 100, 100],
