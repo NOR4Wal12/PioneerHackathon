@@ -410,6 +410,7 @@ body{
   flex-direction:row;
   width:100%;
   justify-content:center;
+  height:80%;
 }
 .profileBox{
   background-color:rgb(255 255 255 / 45%);
@@ -420,6 +421,11 @@ body{
   flex-direction:column;
   align-items:start;
   padding:20px 25px;
+  height:80%;
+  overflow:scroll;
+}
+.profileBox::-webkit-scrollbar {
+  display: none;
 }
 .profileBox h1{
   font-size:36px;
