@@ -50,9 +50,9 @@ workoutIdeals = {
 }
 
 
-currentStretch.innerHTML = myWorkouts[0]
+currentStretch.innerHTML = toDisplay(myWorkouts[0])
 if (myWorkouts.length > 1){
-    nextStretch.innerHTML = myWorkouts[1]
+    nextStretch.innerHTML = toDisplay(myWorkouts[1])
 } else{
     nextStretch.innerHTML = ""
 }
@@ -143,9 +143,9 @@ function gotPoses(poses){
                 window.location.href = "index.html"
             } 
             else{
-                currentStretch.innerHTML = myWorkouts[0]
+                currentStretch.innerHTML = toDisplay(myWorkouts[0])
                 if (myWorkouts.length > 1){
-                    nextStretch.innerHTML = myWorkouts[1]
+                    nextStretch.innerHTML = toDisplay(myWorkouts[1])
                 } else{
                     nextStretch.innerHTML = ""
                 }
