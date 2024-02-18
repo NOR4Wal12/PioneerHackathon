@@ -144,14 +144,6 @@ body{
   flex-direction:row;
   justify-content: space-between;
 }
-#bg{
-  height:100%;
-  width:100%;
-  transition: margin-left .5s;
-  display:flex;
-  flex-direction:row;
-  justify-content: space-between;
-}
 #welcomeText{
   font-family: "Red Hat Display";
   font-size:100px;
@@ -225,7 +217,10 @@ body{
   flex-direction:column;
   justify-content:start;
   align-items:stretch;
-  background-color:rgb(230, 230, 230);
+  /*background-color:rgb(230, 230, 230)*/;
+  background: url('images/bgProfile.png');
+  background-size:cover;
+  background-position:center;
 
 }
 #profileMain{
