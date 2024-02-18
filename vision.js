@@ -6,7 +6,6 @@ const confidence = document.getElementById("confidence")
 const timer = document.getElementById("timer")
 const currentStretch = document.getElementById("currentStretch")
 const nextStretch = document.getElementById("nextStretch")
-const stretchesLeft = document.getElementById("stretchesLeft")
 const accuracy = document.getElementById("accuracy")
 
 dotSize = 20
