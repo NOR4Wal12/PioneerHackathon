@@ -61,10 +61,12 @@ function getDist(pose, currWorkout){
     angles[2] = getAngle(pose.leftKnee.x, pose.leftKnee.y,
         pose.leftHip.x, pose.leftHip.y, 
         pose.leftShoulder.x, pose.leftShoulder.y)
+    console.log(angles[2])
     for (let i; i<5; i++){
+        console.log((angles[i] - currWorkout[i]))
         diff += (angles[i] - currWorkout[i])**2
     }
-    accuracy.innerHTML = Math.sqrt(diff)
+    accuracy.innerHTML = diff
 }
 
 function checkDots(pose){
