@@ -79,6 +79,12 @@ function pullStretch(){
     highestValueIds.push(info[ind].id)
     info.splice(ind, 1);
     console.log(highestValueIds)
+
+    for (let i = 0; i < highestValueIds.length; i++){
+        str += (i + 1) + ". " + toDisplay(highestValueIds[i]) + "</br>";
+    }
+
+    document.getElementById("suggestedList").innerHTML = str;
 }
 
 function addWorkout(name){
