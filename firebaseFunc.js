@@ -33,7 +33,7 @@ function pullStretch(){
     const reference = firebase.database().ref(user);
     const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3'];
     const promises = stretchIds.map(stretchId => reference.child(`stretches/${stretchId}`).get());
-    let stretchData = {}
+    stretchData = []
     Promise.all(promises)
         .then(snapshots => {
             stretchData = snapshots.map(snapshot => {
