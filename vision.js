@@ -90,7 +90,7 @@ function getDist(pose, currWorkout, checkTo){
         diff += (angles[i] - currWorkout[i])**2
     }
     proximity = 100 / (1 + 0.05 * Math.pow(1.1, Math.sqrt(diff)-35))
-    accuracy.innerHTML = Math.round(proximity * 10000) / 100
+    accuracy.innerHTML = Math.round(proximity * 100) / 100
     return Math.sqrt(diff)
 }
 
