@@ -28,6 +28,7 @@ body{
 }
 #loginImg{
   width:90px;
+  border-radius:10px;
 }
 #logoText{
   display:flex;
@@ -40,13 +41,13 @@ body{
   font-weight:bold;
   font-size:36px;
   color:white;
-  margin: 0px 10px 5px 10px;
+  margin: 0px 15px 5px 15px;
 }
 #logoText2{
   font-weight:400;
   font-size:18px;
   color:white;
-  margin: 0px 10px 5px 10px;
+  margin: 0px 15px 5px 15px;
 }
 #loginRight{
   height:100%;
