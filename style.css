@@ -172,11 +172,18 @@ body{
 }
 #workoutTop{
   display:flex;
-  flex-direction:row;
+  flex-direction:row-reverse;
   justify-content:center;
   align-items:center;
   height:75%;
   width:100%;
+}
+#workoutTopRight{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100%
 }
 #workoutBottom{
   display:flex;
@@ -185,6 +192,13 @@ body{
   align-items:center;
   height:25%;
   width:100%;
+}
+#workoutBottomLeft{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100%
 }
 #createWrapper{
   height:100%;

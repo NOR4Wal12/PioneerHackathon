@@ -164,8 +164,8 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
         for (let i = 0; i<errors.length; i++){
             avg += errors[i]
         }
-        fill(0, 255, 0)
-        rect(640, (time)*32, 659, 459)
+        // fill(0, 255, 0)
+        // rect(640, (time)*32, 659, 459)
         if (avg < 400){
             fill(0,255,0)
         } else{
@@ -194,7 +194,10 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
             //strokeWeight(5)
             //line(pose.nose.x, pose.nose.y,(pose.rightHip.x + pose.leftHip.x)/2, (pose.rightHip.y + pose.leftHip.y)/2)
 
-        } if(inView==0){
+        } 
+        fill(0, 255, 0)
+        rect(640, (time)*32, 659, 459)
+        if(inView==0){
             fill(255, 255, 255)
             textSize(42)
             textFont('Verdana');
