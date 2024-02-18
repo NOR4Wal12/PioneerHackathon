@@ -166,7 +166,7 @@ body{
   flex-direction:column;
   justify-content:start;
   align-items:stretch;
-  background: url('images/bgCreate.png');
+  background: url('images/bgCreate.jpg');
   background-size:cover;
   background-position:center;
 }
