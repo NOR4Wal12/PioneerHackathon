@@ -89,7 +89,16 @@ function toDisplay(id){
         return "Warrior III Pose"
     }
 }
+button = document.getElementById("openSidebar")
+function openNav(){
+    document.getElementById("sidebar").style.width="350px";
+    button.onclick = closeNav
+}
 
+function closeNav(){
+    document.getElementById("sidebar").style.width="0";
+    button.onclick = openNav
+}
 function loadList(){
     if(localStorage.getItem("loggedIn")!="yes"){
       window.location.href = "index.html";
