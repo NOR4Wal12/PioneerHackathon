@@ -48,6 +48,31 @@ function pullStretch(){
         });
 
     console.log(stretchData);
+    
+    // Initialize variables to store highest value and IDs with highest values
+    let highestValue = Number.NEGATIVE_INFINITY;
+    let highestValueIds = [];
+    
+    // Iterate through the array to find the highest value
+    for (const item of stretchData) {
+        if (item.value > highestValue) {
+            highestValue = item.value;
+            highestValueIds = [item.id]; // New highest value, so reset IDs array
+        } else if (item.value === highestValue) {
+            highestValueIds.push(item.id); // Add ID to IDs array if it has the same highest value
+        }
+    }
+    
+    // Randomly select three IDs from the IDs array
+    const randomIds = [];
+    while (randomIds.length < 3 && highestValueIds.length > 0) {
+        const randomIndex = Math.floor(Math.random() * highestValueIds.length);
+        const randomId = highestValueIds.splice(randomIndex, 1)[0]; // Remove selected ID from IDs array
+        randomIds.push(randomId);
+    }
+    
+    console.log("IDs with highest values:", randomIds);
+
 }
 
 function addWorkout(name){
