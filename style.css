@@ -335,6 +335,11 @@ main{
   font-weight:800;
   color:rgb(61, 53, 53);
 }
+#suggestedList{
+  font-size:24px;
+  font-weight:800;
+  color:rgb(61, 53, 53);
+}
 .poseImg{
   width:65px;
   height:65px;
