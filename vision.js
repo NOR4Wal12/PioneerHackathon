@@ -12,7 +12,10 @@ errors = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
 
 cameraOn = 1
 dotSize = 15
-
+myWorkouts = sessionStorage.getItem("workout")
+    if (myWorkouts[0]=="null"){
+        myWorkouts.push("warrior2")
+    }
 
 function visionLoad(){
     if(localStorage.getItem("loggedIn")!="yes"){
