@@ -205,6 +205,7 @@ body{
 }
 .poseImg{
   width:75px;
+  height:75px;
   margin:5px;
 }
 .poseText{
@@ -212,6 +213,12 @@ body{
   font-weight:800;
   color:rgb(61, 53, 53);
   margin:5px;
+}
+#clearButton p{
+  margin:10px 0px;
+}
+#jumpButton p{
+  margin:10px 0px;
 }
 .btn{
   display:flex;
