@@ -56,12 +56,12 @@ function loadList(){
         current = snapshot.val()
         if (current == null){
             current = []
+            sessionStorage.setItem("workout", ['null'])
         }
         else {
             current = current.array
+            sessionStorage.setItem("workout", current)
         }
-
-        sessionStorage.setItem("workout", current)
 
         for (let i = 0; i < current.length; i++){
             str += (i + 1) + ". " + toDisplay(current[i]) + "</br>";
