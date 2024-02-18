@@ -627,7 +627,7 @@ video {
   opacity:0;
 }
 
-#gotoselectedworkouts {
+a {
   display: flex;
   flex-direction: column;
   align-items: center;
