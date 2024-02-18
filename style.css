@@ -219,6 +219,7 @@ body{
   justify-content:center;
   align-items:center;
   margin:5px;
+  width:100%;
   border:none;
   border-radius:20px;
   background-color:rgba(112, 92, 92, 0.45);
