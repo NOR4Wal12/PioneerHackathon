@@ -73,4 +73,79 @@ function loadList(){
 
         document.getElementById("list").innerHTML = str;
     })
+
+    pullStretch();
+}
+
+function pullStretch(){
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
+
+    const stretchesRef = firebase.database().ref(user+"/stretches");
+    info = []
+    const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3']
+
+    stretchesRef.on("value", (snapshot) => {
+            snapshot.forEach(function(data){
+                info.push({id:data.val().id, value:data.val().value})
+            })
+        }
+    );
+
+    for (let i = 0; i < stretchIds.length; i++){
+        temp = true;
+        for (let j = 0; j < info.length; j++){
+            if (info[j].id == stretchIds[i]){
+                temp = false;
+            }
+        }
+        if (temp){
+            info.push({id: stretchIds[i], value: 100})
+        }
+    }
+
+    let highestValueIds = [];
+
+    let max = -1;
+    let ind = 0;
+    for (let i = 0; i < info.length; i++){
+        if (info[i].value > max){
+            ind = i;
+            max = info[i].value
+        }
+    }
+    highestValueIds.push(info[ind].id)
+    info.splice(ind, 1);
+    console.log(highestValueIds)
+
+    max = -1;
+    ind = 0;
+    for (let i = 0; i < info.length; i++){
+        if (info[i].value > max){
+            ind = i;
+            max = info[i].value
+        }
+    }
+    highestValueIds.push(info[ind].id)
+    info.splice(ind, 1);
+    console.log(highestValueIds)
+
+    max = -1;
+    ind = 0;
+    for (let i = 0; i < info.length; i++){
+        if (info[i].value > max){
+            ind = i;
+            max = info[i].value
+        }
+    }
+    highestValueIds.push(info[ind].id)
+    info.splice(ind, 1);
+    console.log(highestValueIds)
+
+    for (let i = 0; i < highestValueIds.length; i++){
+        str += (i + 1) + ". " + toDisplay(highestValueIds[i]) + "</br>";
+    }
+
+    document.getElementById("suggestedList").innerHTML = str;
 }
