@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="styleindex.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="firebase.js" defer></script>
+    <script src="index.js" defer></script>
     <title>Yogamind</title>
   </head>
-  <body>
+  <body onload="checkIndex()">
     <div class="container">
       <div class="navbar">
         <img class="logo" src="logo.png" alt="" />
-        <p class="logotext">YogaMind</p>
+        <p class="logotext">Yogamind</p>
         <nav>
           <ul>
-            <li><a href="dashboard">DASHBOARD</a></li>
+            <li><a href="home">HOME</a></li>
             <li><a href="demo">DEMO</a></li>
           </ul>
         </nav>
@@ -28,9 +30,9 @@
           position and more effective meditation.
         </p>
         <p>
-          <a class="learnmorebutton" href="signup">Get Started</a>
+          <button class="learnmorebutton">Get Started</button>
         </p>
-        <div>
+         <div>
           <video loop muted autoplay poster="images/background.jpg">
             <source src="backgroundvideo1.mp4" type="video/mp4" />
           </video>
