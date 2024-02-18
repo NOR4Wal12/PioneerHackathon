@@ -31,7 +31,7 @@ function visionLoad(){
             }
         });
     }
-    
+
 }
 myWorkouts = ["butterfly", "downwarddog", "crescent", "easy"]
 time = 15
@@ -90,7 +90,7 @@ function getDist(pose, currWorkout, checkTo){
         diff += (angles[i] - currWorkout[i])**2
     }
     proximity = 100 / (1 + 0.05 * Math.pow(1.1, Math.sqrt(diff)-35))
-    accuracy.innerHTML = proximity
+    accuracy.innerHTML = Math.round(proximity * 10000) / 100
     return Math.sqrt(diff)
 }
 
@@ -211,7 +211,7 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
             //line(pose.nose.x, pose.nose.y,(pose.rightHip.x + pose.leftHip.x)/2, (pose.rightHip.y + pose.leftHip.y)/2)
 
         } 
-        fill(0, 255, 0)
+        fill(0, 180, 0)
         rect(640, (time)*32, 659, 459)
         if(inView==0){
             fill(255, 255, 255)
