@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="create.css">
     <link rel="manifest" href="manifest.webmanifest">
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
@@ -16,42 +16,26 @@
 </head>
 <body onload = "loadList()">
     <div id="loginWrapper">
-        <div id="loginHeader">
-            <a href="index.html"><</a>
-            <h3>Log In</h3>
-            <a class="hidden">></a>
-        </div>
-        <div id="loginMiddle">
-            <div id="loginFields">
-                <input id="emailField" type="email" placeholder="Email">
-                <input id="passwordField" type="password" placeholder="Password">
-                <h1 id="errorLabel" class="hidden">.</h1>
-                <a id="forgot" href="resetPassword.html">Forgot password?</a>
-                <a id="need" href="register.html">Need an account?</a>
-            </div>
-            <div id="googleLoginBox">
-                <img src="images/googlelogo.png"></img>
-                <h2>Log in with Google</h2>
-            </div>
             <div>
                 <h2>Current List:</h2>
-                <h3 id="list">Currently empty</h3>
+                <h3 id="list">None currently planned!</h3>
             </div>
-            
             <div>
-                <button id="1" onclick="addWorkout('butterfly')">Add Butterfly Pose</button>
-              <button id="2" onclick="addWorkout('camel')">Add Camel Pose</button>
-              <button id="3" onclick="addWorkout('crescent')">Add Crescent Pose</button>
-              <button id="4" onclick="addWorkout('easy')">Add Easy Pose</button>
-              <button id="5" onclick="addWorkout('triangle')">Add Triangle</button>
-              <button id="6" onclick="addWorkout('reverseWarrior')">Add reverseWarrior</button>
-              <button id="7" onclick="addWorkout('tree')">Add Tree</button>
-              <button id="8" onclick="addWorkout('warrior1')">Add Warrior 1 Pose</button>
-              <button id="9" onclick="addWorkout('warrior2')">Add Warrior 2 Pose</button>
-              <button id="10" onclick="addWorkout('warrior3')">Add Warrior 3 Pose</button>
-            <button id="easteregg" onclick="clearCustom()">Clear Lists</button>
-              
+                <h2>Exercises:</h2>
+                <button class="btn" id="1" onclick="addWorkout('Butterfly')">Add Butterfly Pose</button>
+                <button class="btn" id="2" onclick="addWorkout('Camel')">Add Camel Pose</button>
+                <button class="btn" id="3" onclick="addWorkout('Crescent')">Add Crescent Pose</button>
+                <button class="btn" id="4" onclick="addWorkout('Easy')">Add Easy Pose</button>
+                <button class="btn" id="5" onclick="addWorkout('Triangle')">Add Triangle</button>
+                <button class="btn" id="6" onclick="addWorkout('Reverse Warrior')">Add Reverse Warrior</button>
+                <button class="btn" id="7" onclick="addWorkout('Tree')">Add Tree</button>
+                <button class="btn" id="8" onclick="addWorkout('Warrior 1')">Add Warrior I Pose</button>
+                <button class="btn" id="9" onclick="addWorkout('Warrior 2')">Add Warrior II Pose</button>
+                <button class="btn" id="10" onclick="addWorkout('Warrior 3')">Add Warrior III Pose</button>
+            <button class="btnclear" id="easteregg" onclick="clearCustom()">Clear Lists</button>
             </div>
+            <a href="home.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <button class="btnsubmit" id="submit" onclick="submitList()">Submit List</button>
         </div>
     </div>
 </body>
