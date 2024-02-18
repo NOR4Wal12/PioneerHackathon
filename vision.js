@@ -10,17 +10,26 @@ const timer = document.getElementById("timer")
 const currentStretch = document.getElementById("currentStretch")
 const nextStretch = document.getElementById("nextStretch")
 const accuracy = document.getElementById("accuracy")
-const rleg = document.getElementById("rleg")
-const lleg = document.getElementById("lleg")
-const hip = document.getElementById("hip")
-const rarm = document.getElementById("rarm")
-const larm = document.getElementById("larm")
 
 cameraOn = 1
 dotSize = 20
 //myWorkouts = sessionStorage.getItem("workout")
-myWorkouts = ["butterfly", "dave", "Ben", "Jeff"]
-time = 30
+myWorkouts = ["butterfly", "downwarddog", "crescent", "easy"]
+time = 15
+workoutIdeals = {
+    "butterfly": [40, 40, 74, 100, 100],
+    "downwarddog": [160, 160, 125, 25, 25],
+    "crescent": [150, 174, 153, 89, 128],
+    "easy": [50, 50, 75, 100, 100],
+    "triangle": [180, 180, 74, 112],
+    "reversewarrior": [135, 180, 83, 180, 50],
+    "tree": [50, 170, 170, 40, 30],
+    "warrior1": [180, 180, 145, 90, 90],
+    "warrior2": [127, 170, 133, 90, 90],
+    "warrior3": [160, 160, 130, 120, 120],
+
+}
+
 
 currentStretch.innerHTML = myWorkouts[0]
 if (myWorkouts.length > 1){
@@ -37,6 +46,30 @@ function setup() {
     poseNet.on('pose', gotPoses)
   }
 
+function getDist(pose, currWorkout){
+    angles = [0, 0, 0, 0, 0]
+    diff=0;
+    angles[3] = getAngle(pose.rightWrist.x, pose.rightWrist.y, 
+        pose.rightShoulder.x, pose.rightShoulder.y, 
+        pose.rightHip.x, pose.rightHip.y)
+    angles[4] = getAngle(pose.leftWrist.x, pose.leftWrist.y, 
+        pose.leftShoulder.x, pose.leftShoulder.y, 
+        pose.leftHip.x, pose.leftHip.y)
+    angles[0] = getAngle(pose.rightHip.x, pose.rightHip.y, 
+        pose.rightKnee.x, pose.rightKnee.y, 
+        pose.rightAnkle.x, pose.rightAnkle.y)
+    angles[1] = getAngle(pose.leftHip.x, pose.leftHip.y, 
+        pose.leftKnee.x, pose.leftKnee.y, 
+        pose.leftAnkle.x, pose.leftAnkle.y)
+    angles[2] = getAngle(pose.leftKnee.x, pose.leftKnee.y,
+        pose.leftHip.x, pose.leftHip.y, 
+        pose.leftShoulder.x, pose.leftShoulder.y)
+    for (let i; i<5; i++){
+        diff += (angles[i] - currWorkout[i])**2
+    }
+    accuracy.innerHTML = Math.sqrt(diff)
+}
+
 function checkDots(pose){
     allGood = true;
     Lespos = [pose.nose.confidence, pose.rightHip.confidence, pose.leftHip.confidence, 
@@ -44,7 +77,7 @@ function checkDots(pose){
           pose.leftShoulder.confidence, pose.rightKnee.confidence, pose.leftKnee.confidence, 
           pose.rightAnkle.confidence, pose.leftAnkle.confidence]
     for (let i = 0; i<Lespos.length; i++){
-        if (Lespos[i] < 0.2){
+        if (Lespos[i] < 0.13){
             closeText.innerHTML = "Please make sure your entire body is in frame"
             allGood = false;
             break
@@ -61,21 +94,6 @@ function gotPoses(poses){
         pose = poses[0].pose;
         confidence.innerHTML = pose.score
         checkDots(pose)
-        rarm.innerHTML = "right arm: " + getAngle(pose.rightWrist.x, pose.rightWrist.y, 
-            pose.rightShoulder.x, pose.rightShoulder.y, 
-            pose.rightHip.x, pose.rightHip.y)
-        larm.innerHTML = "left arm: " + getAngle(pose.leftWrist.x, pose.leftWrist.y, 
-            pose.leftShoulder.x, pose.leftShoulder.y, 
-            pose.leftHip.x, pose.leftHip.y)
-        rleg.innerHTML = "right leg: " + getAngle(pose.rightHip.x, pose.rightHip.y, 
-            pose.rightKnee.x, pose.rightKnee.y, 
-            pose.rightAnkle.x, pose.rightAnkle.y)
-        lleg.innerHTML = "left leg: " + getAngle(pose.leftHip.x, pose.leftHip.y, 
-            pose.leftKnee.x, pose.leftKnee.y, 
-            pose.leftAnkle.x, pose.leftAnkle.y)
-        hip.innerHTML = "hip: " + getAngle(pose.leftKnee.x, pose.leftKnee.y,
-            pose.leftHip.x, pose.leftHip.y, 
-            pose.leftShoulder.x, pose.leftShoulder.y)
         time -= 0.2
         timer.innerHTML = "Time Remaining: " + Math.round(time)
         if (time <= 0.2){
