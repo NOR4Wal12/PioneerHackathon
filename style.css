@@ -160,6 +160,16 @@ body{
   background-size:cover;
   background-position:center;
 }
+#createWrapper{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:start;
+  align-items:stretch;
+  background: url('images/bgCreate.png');
+  background-size:cover;
+  background-position:center;
+}
 #bgFilter{
   height:100%;
   backdrop-filter:blur(7px) brightness(0.6);

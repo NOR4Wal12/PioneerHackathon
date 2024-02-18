@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
-    <link rel="stylesheet" href="create.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.webmanifest">
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
@@ -12,12 +12,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="firebase.js" defer></script>
     <script src="firebaseFunc.js" defer></script>
-<!--     <script src="login.js" defer></script> -->
-    <title>Login</title>
+    <title>Create a Workout</title>
 </head>
 <body onload = "loadList()">
-    <div id="loginWrapper">
-        <a href="home.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+    <div id="createWrapper">
+        <div id="bgFilter">
+            <div id="homeSide">
+                <div id="sidebar">
+                    <div class="sidebarLink"><img class="sidebarImg" src="images/home.png"><a href="home.html">Home</a></div>
+                    <div class="sidebarLink"><img class="sidebarImg" src="images/workout.png"><a href="#">Create Workout</a></div>
+                    <div class="sidebarLink"><img class="sidebarImg" src="images/stretch.png"><a href="#">Choose a stretch</a></div>
+                    <div class="sidebarLink"><img class="sidebarImg" src="images/profile.png"><a href="profile.html">Profile</a></div>
+                    <div class="sidebarLink"><img class="sidebarImg" src="images/help.png"><a href="#">Help</a></div>
+                    <div class="sidebarLink"><img class="sidebarImg" src="images/about.png"><a href="#">About Us</a></div>
+                    <div class="sidebarLink"><img class="sidebarImg" src="images/github.png"><a href="https://github.com/NOR4Wal12/PioneerHackathon" target="_blank">GitHub Repo</a></div>
+                </div>
+                <button id="openSidebar" onclick="openNav()">&#9776;</button>
+            </div>
             <div>
                 <h2>Current List:</h2>
                 <h3 id="list">None currently planned!</h3>
@@ -34,7 +45,7 @@
                 <button class="btn" id="8" onclick="addWorkout('warrior1')">Add Star Pose</button>
                 <button class="btn" id="9" onclick="addWorkout('warrior2')">Add Warrior II Pose</button>
                 <button class="btn" id="10" onclick="addWorkout('warrior3')">Add Warrior III Pose</button>
-            <button class="btnclear" id="easteregg" onclick="clearCustom()">Clear Lists</button>
+                <button class="btnclear" id="easteregg" onclick="clearCustom()">Clear Lists</button>
             </div>
         </div>
     </div>
