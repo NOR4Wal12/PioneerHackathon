@@ -1,5 +1,5 @@
 let video;
-let podeNet;
+let poseNet;
 let pose;
 const closeText = document.getElementById("tooCloseText")
 const confidence = document.getElementById("confidence")
