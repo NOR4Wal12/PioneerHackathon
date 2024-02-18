@@ -22,3 +22,10 @@ else if (now >=12 && now <= 18){
 else {
     time.innerHTML = "evening"
 }
+
+const start = document.getElementById('startStretch')
+start.onclick = (event) =>{
+    event.preventDefault()
+    window.location.href="vision.html"
+    
+}
