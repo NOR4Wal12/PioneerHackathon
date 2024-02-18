@@ -49,7 +49,7 @@ function addWorkout(name){
         current.push(name)
 
         for (let i = 0; i < current.length; i++){
-            str += (i + 1) + ". " + current[i];
+            str += (i + 1) + ". " + current[i] + "</br>";
         }
         
         database.ref(user + '/custom').set({array:current}).then((snapshot)=>{})
@@ -62,6 +62,7 @@ function clearCustom(){
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
     database.ref(user + '/custom').set({array:[]}).then((snapshot)=>{})
+    document.getElementById("list").innerHTML = "Currently empty";
 }
 
 
