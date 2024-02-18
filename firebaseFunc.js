@@ -3,25 +3,25 @@ function pushStretchR(id){
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
-    if (id === 1){
+    if (id == "butterfly"){
         database.ref(user + '/stetches').set({'butterfly':r2}).then((snapshot)=>{})
-    } else if (id == 2){
-        database.ref(user + '/stetches').set({'camel':r2}).then((snapshot)=>{})
-    } else if (id == 3){
+    } else if (id == "downwarddog"){
+        database.ref(user + '/stetches').set({'downwarddog':r2}).then((snapshot)=>{})
+    } else if (id == "crescent"){
         database.ref(user + '/stetches').set({'crescent':r2}).then((snapshot)=>{})
-    } else if (id == 4){
+    } else if (id == "easy"){
         database.ref(user + '/stetches').set({'easy':r2}).then((snapshot)=>{})
-    } else if (id == 5){
+    } else if (id == "triangle"){
         database.ref(user + '/stetches').set({'triangle':r2}).then((snapshot)=>{})
-    } else if (id == 6){
-        database.ref(user + '/stetches').set({'reverseWarrior':r2}).then((snapshot)=>{})
-    } else if (id == 7){
+    } else if (id == "reversewarrior"){
+        database.ref(user + '/stetches').set({'reversewarrior':r2}).then((snapshot)=>{})
+    } else if (id == "tree"){
         database.ref(user + '/stetches').set({'tree':r2}).then((snapshot)=>{})
-    } else if (id == 8){
+    } else if (id == "warrior1"){
         database.ref(user + '/stetches').set({'warrior1':r2}).then((snapshot)=>{})
-    } else if (id == 9){
+    } else if (id == "warrior2"){
         database.ref(user + '/stetches').set({'warrior2':r2}).then((snapshot)=>{})
-    } else if (id == 10){
+    } else if (id == "warrior3"){
         database.ref(user + '/stetches').set({'warrior3':r2}).then((snapshot)=>{})
     }
 }
@@ -65,14 +65,14 @@ function clearCustom(){
     user = user.substring(0,user.indexOf("@"))
     database.ref(user + '/custom').set({array:[]}).then((snapshot)=>{})
     document.getElementById("list").innerHTML = "None currently planned!";
-    sessionStorage.setItem("workout", [])
+    sessionStorage.setItem("workout", ["null"])
 }
 
 function toDisplay(id){
     if (id == 'butterfly'){
         return "Butterfly Pose"
     } else if (id == 'downwarddog'){
-        return "Downward Dog Pose"
+        return "Toe Touch Pose"
     } else if (id == 'crescent'){
         return "Crescent Pose"
     } else if (id == 'easy'){
