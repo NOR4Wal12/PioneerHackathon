@@ -33,19 +33,21 @@ function pullStretch(){
     const reference = firebase.database().ref(user);
     const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3'];
     const promises = stretchIds.map(stretchId => reference.child(`stretches/${stretchId}`).get());
-
+    let stretchData = {}
     Promise.all(promises)
         .then(snapshots => {
-            const stretchData = snapshots.map(snapshot => ({ id: snapshot.key, value: snapshot.val() }));
-            stretchData.sort((a, b) => a.value - b.value); // Sort by value
-            const smallestStretches = stretchData.slice(0, 3); // Get the first 3 stretches
-            console.log("Smallest stretches:", smallestStretches);
-            document.getElementById('result').innerText = JSON.stringify(smallestStretches);
+            stretchData = snapshots.map(snapshot => {
+                const value = snapshot.exists() ? snapshot.val() : 100;
+                return { id: snapshot.key, value };
+            });
+            stretchData.sort((a, b) => a.value - b.value); // Sort in ascending order
+            console.log("Stretches in ascending order:", stretchData);
         })
         .catch(error => {
             console.error("Error fetching data:", error);
-            document.getElementById('result').innerText = "Error fetching data";
         });
+
+    console.log(stretchData);
 }
 
 function addWorkout(name){
