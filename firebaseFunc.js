@@ -67,7 +67,7 @@ function pullStretch(){
                 break;
             }
         }
-        info.push{id: stretchIds[i], value: 100}
+        info.push({id: stretchIds[i], value: 100})
     }
 
     console.log(info)
