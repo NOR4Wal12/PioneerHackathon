@@ -313,8 +313,8 @@ body{
 }
 .poseText{
   font-size:18px;
-  font-weight:800;
-  color:rgb(61, 53, 53);
+  font-weight:300;
+  color:rgb(20 18 18);
   margin:5px;
 }
 #clearButton p{
