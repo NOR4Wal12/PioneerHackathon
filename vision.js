@@ -10,10 +10,13 @@ const accuracy = document.getElementById("accuracy")
 errors = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
 
 cameraOn = 1
-dotSize = 20
-//myWorkouts = sessionStorage.getItem("workout")
-//console.log(myWorkouts)
-myWorkouts = ["butterfly", "downwarddog", "crescent", "easy"]
+dotSize = 15
+myWorkouts = sessionStorage.getItem("workout")
+if (myWorkouts.length == 0){
+    myWorkouts.push("warrior2")
+}
+console.log(myWorkouts)
+//myWorkouts = ["butterfly", "downwarddog", "crescent", "easy"]
 time = 15
 workoutIdeals = {
     "butterfly": [40, 40, 74, 100, 100],
@@ -68,7 +71,7 @@ function getDist(pose, currWorkout, checkTo){
         //console.log((angles[i] - currWorkout[i]))
         diff += (angles[i] - currWorkout[i])**2
     }
-    proximity = 100 / (1 + 0.1 * Math.pow(1.1, Math.sqrt(diff)-35))
+    proximity = 100 / (1 + 0.05 * Math.pow(1.1, Math.sqrt(diff)-35))
     accuracy.innerHTML = proximity
     return Math.sqrt(diff)
 }
@@ -94,7 +97,6 @@ function gotPoses(poses){
     //console.log(poses)
     if (poses.length > 0){
         pose = poses[0].pose;
-        confidence.innerHTML = pose.score
         checkDots(pose)
         checkTo=5;
         if(myWorkouts[0]=="easy" || myWorkouts[0]=="triangle" || myWorkouts[0]=="tree"){
@@ -109,7 +111,7 @@ function gotPoses(poses){
         if (avg < 400){
             time -= 0.2
         } else{
-            time -= 0.1
+            time -= 0.07
         }
         timer.innerHTML = "Time Remaining: " + Math.round(time)
         if (time <= 0.2){
