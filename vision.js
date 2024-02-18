@@ -148,13 +148,6 @@ function modelLoaded(){
 }
 
 
-const button = document.getElementById("changeButton")
-  button.onclick = (event) => {
-    event.preventDefault()
-    cameraOn *= -1
-    window.alert("pressed")
-    
-  }
 
 function getAngle(Ax, Ay, Bx, By, Cx, Cy){
     b=Math.sqrt((Ax - Bx)**2 + (Ay - By)**2)
