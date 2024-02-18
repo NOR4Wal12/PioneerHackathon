@@ -7,6 +7,11 @@ const timer = document.getElementById("timer")
 const currentStretch = document.getElementById("currentStretch")
 const nextStretch = document.getElementById("nextStretch")
 const accuracy = document.getElementById("accuracy")
+cameraOn = 1
+dotSize = 20
+//myWorkouts = sessionStorage.getItem("workout")
+myWorkouts = ["butterfly", "dave", "Ben", "Jeff"]
+time = 30
 
 currentStretch.innerHTML = myWorkouts[0]
 if (myWorkouts.length > 1){
@@ -14,11 +19,6 @@ if (myWorkouts.length > 1){
 } else{
     nextStretch.innerHTML = ""
 }
-
-dotSize = 20
-//myWorkouts = sessionStorage.getItem("workout")
-myWorkouts = ["butterfly", "dave", "Ben", "Jeff"]
-time = 30
 
 function setup() {
     createCanvas(680, 480);
@@ -84,7 +84,6 @@ function modelLoaded(){
 }
 
 
-let cameraOn = 1;
 const button = document.getElementById("changeButton")
   button.onclick = (event) => {
     event.preventDefault()
@@ -92,8 +91,6 @@ const button = document.getElementById("changeButton")
     window.alert("pressed")
     
   }
-
-closeText.style.display="flex"
 
 function getAngle(Ax, Ay, Bx, By, Cx, Cy){
     b=Math.sqrt((Ax - Bx)**2 + (Ay - By)**2)
