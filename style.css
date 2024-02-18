@@ -170,6 +170,22 @@ body{
   background-size:cover;
   background-position:center;
 }
+#createLeft{
+  height:100%;
+  width:33%;
+  display:flex;
+  flex-direction:column;
+  align-items:start;
+  justify-content:start;
+}
+#createLeft{
+  height:100%;
+  width:33%;
+  display:flex;
+  flex-direction:column;
+  align-items:start;
+  justify-content:start;
+}
 #bgFilter{
   height:100%;
   backdrop-filter:blur(7px) brightness(0.6);
