@@ -59,10 +59,9 @@ function addWorkout(name){
 }
 
 function clearCustom(){
-    // email = localStorage.getItem("user")
-    // user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
-    // user = user.substring(0,user.indexOf("@"))
-    user = "test"
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
     database.ref(user + '/custom').set({array:[]}).then((snapshot)=>{})
     document.getElementById("list").innerHTML = "None currently planned!";
 }
