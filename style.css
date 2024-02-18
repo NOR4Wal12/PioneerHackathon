@@ -138,7 +138,7 @@ body{
 }
 #bgFilter{
   height:100%;
-  backdrop-filter:blur(7px);
+  backdrop-filter:blur(7px) brightness(0.6);
   transition: margin-left .5s;
   display:flex;
   flex-direction:row;
@@ -149,7 +149,7 @@ body{
   font-size:100px;
   font-weight:800;
   margin: 0px 0px 75px 0px;
-  color:rgb(37, 37, 37)
+  color:rgb(255, 255, 255)
 }
 #startStretch{
   font-family: "Red Hat Display";
@@ -239,12 +239,12 @@ body{
 }
 #profileMain hr{
   width:80%;
-  border: 2px solid rgb(61, 53, 53);
+  border: 2px solid rgb(255, 255, 255);
 }
 #profileWelcome{
   font-size:60px;
   font-weight:600;
-  color:rgb(61, 53, 53);
+  color:rgb(255, 255, 255);
   margin:30px 0px 10px 0px;
 }
 .profileBox{
