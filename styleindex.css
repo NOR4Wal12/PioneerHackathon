@@ -4,8 +4,14 @@
   }
   
   @font-face {
-    font-family: 'Poppins', sans-serif;
-    src: url("Staatliches-Regular.ttf");
+    font-family: ObjectSans;
+    font-weight: bold;
+    src: url("ObjectSans-Heavy.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: ObjectSansThin;
+    src: url("ObjectSans-Regular.otf") format("opentype");
   }
   
   body {
@@ -14,7 +20,7 @@
   }
   
   .container {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     /* background-image: url(images/background.jpg); */
     background-position: center;
@@ -24,10 +30,10 @@
   }
   
   .logo {
-    height: 6rem;
-    width: 6rem;
+    height: 4rem;
+    width: 4rem;
     padding-top: 0px;
-    padding-left: 20px;
+    padding-left: 10px;
   }
   
   .navbar {
@@ -67,12 +73,12 @@
   }
   
   .logotext {
-    font-family: Staatliches;
+    font-family: ObjectSansThin;
     font-size: 30px;
     padding-left: 10px;
-    padding-bottom: 0px;
+    padding-bottom: 5px;
   }
-  
+
   .signupbutton {
     background-color: #ffffff;
     border: rgb(0, 0, 0) solid 1px;
@@ -111,7 +117,7 @@
   }
   
   .introtext {
-    font-family: Calibri;
+    font-family: ObjectSans;
     font-weight: bold;
     font-size: 70px;
   }
@@ -119,14 +125,14 @@
   .introduction {
     text-align: left;
     margin-left: 150px;
-    margin-top: 150px;
+    margin-top: 140px;
     width: 900px;
     color: rgb(255, 255, 255);
     /* color: rgb(46, 75, 51); */
   }
   
   .introsubtext {
-    font-family: Calibri;
+    font-family: ObjectSansThin;
     margin-top: 35px;
     font-size: 30px;
     width: 1000px;
@@ -143,7 +149,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 23px;
-    font-family: Calibri;
+    font-family: ObjectSans;
     border-radius: 20px;
     margin-left: 10px;
     margin-top: 45px;
@@ -162,4 +168,3 @@
     bottom: 0;
     z-index: -1;
   }
-  
