@@ -3,8 +3,7 @@ let poseNet;
 let pose;
 let inView = 1
 let ticks = 0
-const closeText = document.getElementById("tooCloseText")
-const confidence = document.getElementById("confidence")
+
 const timer = document.getElementById("timer")
 const currentStretch = document.getElementById("currentStretch")
 const nextStretch = document.getElementById("nextStretch")
@@ -85,13 +84,13 @@ function checkDots(pose){
               pose.leftKnee.confidence, pose.rightAnkle.confidence, pose.leftAnkle.confidence]
     for (let i = 0; i<Lespos.length; i++){
         if (Lespos[i] < 0.1){
-            closeText.innerHTML = "Please make sure your entire body is in frame"
+            
             allGood = false;
             break
         }
     }
     if (allGood == true){
-        closeText.innerHTML = "Lets start streching!"
+        
     }
 }
 
@@ -138,13 +137,13 @@ function gotPoses(poses){
         }
     } else{
         inView = 0
-        confidence.innerHTML = "\n"
-        closeText.innerHTML = "Please Enter Frame"
+        
+        
     }
 }
 
 function modelLoaded(){
-    console.log("I love men I love men I love men I love men")
+    console.log("loaded")
 }
 
 
