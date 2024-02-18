@@ -18,7 +18,7 @@ if (myWorkouts.length > 1){
 dotSize = 20
 //myWorkouts = sessionStorage.getItem("workout")
 myWorkouts = ["butterfly", "dave", "Ben", "Jeff"]
-time = 15
+time = 30
 
 function setup() {
     createCanvas(680, 480);
