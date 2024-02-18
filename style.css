@@ -206,7 +206,7 @@ body{
   border: solid 3px rgb(255, 255, 255);
 }
 #sidebar{
-  background-color:rgb(76, 92, 128);
+  background-color:rgb(39 39 39);
   display:flex;
   flex-direction:column;
   align-items:center;
