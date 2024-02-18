@@ -40,22 +40,14 @@ function pullStretch(){
     info = []
     const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3']
 
-    stretchesRef.get().then((snapshot) => {
-        if (snapshot.exists()) {
-            const data = snapshot.val();
+    stretchesRef.on("value", (snapshot) => {
             snapshot.forEach(function(data){
-                info.push(data.val())
+                info.push({id:data.val().id, value:data.val().value})
+                console.log(data.val())
             })
-
             console.log(info)
-        } else {
-            console.log("No data available");
-            // document.getElementById('result').innerText = "No data available";
         }
-    }).catch((error) => {
-        console.error("Error fetching data:", error);
-        // document.getElementById('result').innerText = "Error fetching data";
-    });
+    );
 
     console.log(info)
 
@@ -68,55 +60,17 @@ function pullStretch(){
         }
         info.push({id: stretchIds[i], value: 100})
     }
-
-    console.log(info)
-
-    
-
-    // console.log(stretchIds)
-    
-    // const reference = firebase.database().ref(user);
-    // const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3'];
-    // const promises = stretchIds.map(stretchId => reference.child(`stretches/${stretchId}`).get());
-    // stretchData = []
-    // Promise.all(promises)
-    //     .then(snapshots => {
-    //         stretchData = snapshots.map(snapshot => {
-    //             const value = snapshot.exists() ? snapshot.val() : 100;
-    //             return { id: snapshot.key, value };
-    //         });
-    //         stretchData.sort((a, b) => b.value - a.value); // Sort in ascending order
-    //         console.log("Stretches in ascending order:", stretchData);
-    //     })
-    //     .catch(error => {
-    //         console.error("Error fetching data:", error);
-    //     });
-
-    // console.log(stretchData);
-    
-    // // Initialize variables to store highest value and IDs with highest values
-    // let highestValue = Number.NEGATIVE_INFINITY;
-    // let highestValueIds = [];
-    
-    // // Iterate through the array to find the highest value
-    // for (const item of stretchData) {
-    //     if (item.value > highestValue) {
-    //         highestValue = item.value;
-    //         highestValueIds = [item.id]; // New highest value, so reset IDs array
-    //     } else if (item.value === highestValue) {
-    //         highestValueIds.push(item.id); // Add ID to IDs array if it has the same highest value
-    //     }
-    // }
-    
-    // // Randomly select three IDs from the IDs array
-    // const randomIds = [];
-    // while (randomIds.length < 3 && highestValueIds.length > 0) {
-    //     const randomIndex = Math.floor(Math.random() * highestValueIds.length);
-    //     const randomId = highestValueIds.splice(randomIndex, 1)[0]; // Remove selected ID from IDs array
-    //     randomIds.push(randomId);
-    // }
-    
-    // console.log("IDs with highest values:", randomIds);
+    for (let i = 0; i < stretchIds.length; i++){
+        temp = true;
+        for (let j = 0; j < info.length; j++){
+            if (info[j].id == stretchIds[i]){
+                temp = false;
+            }
+        }
+        if (temp){
+            info.push({id: stretchIds[i], value: 100})
+        }
+    }
 
 }
 
