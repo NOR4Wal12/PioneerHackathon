@@ -93,7 +93,7 @@ function gotPoses(poses){
         pose = poses[0].pose;
         confidence.innerHTML = pose.score
         checkDots(pose)
-        getDist(pose, myWorkouts[0])
+        getDist(pose, workoutIdeals[myWorkouts[0]])
         time -= 0.2
         timer.innerHTML = "Time Remaining: " + Math.round(time)
         if (time <= 0.2){
