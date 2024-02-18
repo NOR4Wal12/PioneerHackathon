@@ -64,7 +64,7 @@ function pullStretch(){
     for (let i = 0; i < stretchIds.length; i++){
         for (let j = 0; j < info.length; j++){
             if (info[j].id == stretchIds[i]){
-                break
+                break;
             }
         }
         info.push{id: stretchIds[i], value: 100}
