@@ -193,8 +193,10 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
             //line(pose.nose.x, pose.nose.y,(pose.rightHip.x + pose.leftHip.x)/2, (pose.rightHip.y + pose.leftHip.y)/2)
 
         } else{
-            fill(0, 0, 0)
-            filter(BLUR, 3);
+            fill(255, 255, 255)
+            textSize(32)
+            textFont('Verdana');
+            filter(BLUR, 8);
             textAlign(CENTER);
             text('Please Enter Frame', 340, 240);
         }
