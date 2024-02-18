@@ -195,13 +195,37 @@ body{
 #yourExercise{
   color:rgb(61, 53, 53);
   font-weight:900;
-  margin:5px;
+  margin:5px 0px;
   font-size:48px;
 }
 #list{
   font-size:24px;
   font-weight:800;
   color:rgb(61, 53, 53);
+}
+.poseImg{
+  width:75px;
+  margin:5px;
+}
+.poseText{
+  font-size:24px;
+  font-weight:800;
+  color:rgb(61, 53, 53);
+  margin:5px;
+}
+.btn{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  margin:5px;
+  border:none;
+  border-radius:20px;
+  background-color:rgba(112, 92, 92, 0.45);
+  transition:background-color 0.3s;
+}
+.btn:hover{
+  background-color:rgba(197, 157, 157, 0.45);
 }
 #addExercise{
   color:rgb(61, 53, 53);
