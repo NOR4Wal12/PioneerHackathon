@@ -55,6 +55,7 @@ function addWorkout(name){
             document.getElementById("list").innerHTML = str;
         }
         
+        sessionStorage.setItem("workout", current)
     })
 }
 
@@ -64,6 +65,7 @@ function clearCustom(){
     user = user.substring(0,user.indexOf("@"))
     database.ref(user + '/custom').set({array:[]}).then((snapshot)=>{})
     document.getElementById("list").innerHTML = "None currently planned!";
+    sessionStorage.setItem("workout", [])
 }
 
 function toDisplay(id){
@@ -115,6 +117,7 @@ function loadList(){
         else {
             current = current.array
         }
+        sessionStorage.setItem("workout", current)
 
         for (let i = 0; i < current.length; i++){
             str += (i + 1) + ". " + toDisplay(current[i]) + "</br>";
