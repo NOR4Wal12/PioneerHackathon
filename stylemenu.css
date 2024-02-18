@@ -1,3 +1,16 @@
+@font-face {
+  font-family: ObjectSansThin;
+  font-weight: bold;
+  src: url("ObjectSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: ObjectSans;
+  font-weight: bold;
+  src: url("ObjectSans-Heavy.otf") format("opentype");
+}
+
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -19,18 +32,34 @@ body {
   padding: 6px 8px 20px 16px;
   text-decoration: none;
   font-size: 35px;
-  color: #818181;
+  color: rgb(255, 255, 255);
   display: block;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #3700ff;
 }
 
 .main {
   margin-left: 650px;
   font-size: 28px;
   padding: 0px 10px;
+}
+
+#poseTitle {
+  font-size: 50px;
+  font-family: ObjectSans, Calibri;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin: 0px;
+  padding-top: 20px;
+}
+
+#poseDescription {
+  font-size: 25px;
+  font-family: ObjectSansThin, calibri;
+  color: rgb(0, 0, 0);
+  margin-bottom: 30px;
 }
 
 @media screen and (max-height: 450px) {
