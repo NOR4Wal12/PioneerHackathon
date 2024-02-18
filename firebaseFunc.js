@@ -1,3 +1,8 @@
+document.getElementById("jumpButton").onclick = (event) =>{
+    event.preventDefault()
+    window.location.href="vision.html"
+}
+
 function pushStretchR(id, r2){
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
