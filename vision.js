@@ -3,11 +3,16 @@ let podeNet;
 let pose;
 const closeText = document.getElementById("tooCloseText")
 const confidence = document.getElementById("confidence")
-const angle = document.getElementById("angle")
+const timer = document.getElementById("timer")
+const currentStretch = document.getElementById("currentStretch")
+const nextStretch = document.getElementById("nextStretch")
+const StretchesLeft = document.getElementById("StretchesLeft")
+const accuracy = document.getElementById("accuracy")
+
 dotSize = 20
-//myWorkouts = sessionStorage.getItem("workouts")
-myWorkouts = ["butterfly"]
-timer = 10
+//myWorkouts = sessionStorage.getItem("workout")
+myWorkouts = ["butterfly", "dave", "Ben"]
+timer = 15
 
 function setup() {
     createCanvas(680, 480);
@@ -44,10 +49,25 @@ function gotPoses(poses){
         //angle.innerHTML = getAngle(pose.rightWrist.x, pose.rightWrist.y, 
         //    pose.rightShoulder.x, pose.rightHip.y, 
         //    pose.rightKnee.x, pose.rightKnee.y)
-        timer += 0.01
-        angle.innerHTML = timer
+        timer -= 0.2
+        timer.innerHTML = "Time Remaining: " + Math.round(timer)
+        if (timer <= 0.2){
+            myWorkouts.slice(1)
+            timer=15
+            if (myWorkouts.length == 0){
+                window.location.href = "index.html"
+            } 
+            else{
+                currentStretch.innerHTML = myWorkouts[0]
+                if (myWorkouts.length > 1){
+                    currentStretch.innerHTML = myWorkouts[1]
+                }
+                StretchesLeft.innerHTML = myWorkouts.length
+            }
+        }
     } else{
-        confidence.innerHTML = "Please enter frame"
+        confidence.innerHTML = "\n"
+        closeText.innerHTML = "Please Enter Frame"
     }
 }
 
