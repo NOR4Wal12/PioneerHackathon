@@ -244,7 +244,7 @@ body{
 }
 #profileMain hr{
   width:80%;
-  border: 1px solid rgb(61, 53, 53);
+  border: 2px solid rgb(61, 53, 53);
 }
 #profileWelcome{
   font-size:60px;
