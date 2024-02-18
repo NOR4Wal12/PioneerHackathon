@@ -155,6 +155,7 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
         background(220);
         image(video, 0, 0)
         //strokeWeight(1)
+        avg=0
         for (let i = 0; i<errors.length; i++){
             avg += errors[i]
         }
