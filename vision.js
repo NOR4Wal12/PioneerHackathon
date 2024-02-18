@@ -20,6 +20,16 @@ dotSize = 15
 function visionLoad(){
     if(localStorage.getItem("loggedIn")!="yes"){
         window.location.href = "index.html";
+        document.addEventListener('DOMContentLoaded', () => {
+            const workoutNameElement = document.getElementById('workoutName');
+            const selectedWorkout = sessionStorage.getItem('selectedWorkout');
+            
+            if (selectedWorkout) {
+                workoutNameElement.textContent = selectedWorkout;
+            } else {
+                workoutNameElement.textContent = 'No workout selected.';
+            }
+        });
     }
     
 }
