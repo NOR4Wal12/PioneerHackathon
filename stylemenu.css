@@ -66,3 +66,9 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+img {
+  width: 40%;
+  height: 40%;
+  border-radius: 10px;
+}
