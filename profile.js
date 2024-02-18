@@ -24,7 +24,7 @@ function toDisplay(id){
     if (id == 'butterfly'){
         return "Butterfly Pose"
     } else if (id == 'downwarddog'){
-        return "Downward Dog Pose"
+        return "Toe Touch Pose"
     } else if (id == 'crescent'){
         return "Crescent Pose"
     } else if (id == 'easy'){
@@ -43,6 +43,7 @@ function toDisplay(id){
         return "Warrior III Pose"
     }
 }
+
 function loadList(){
     if(localStorage.getItem("loggedIn")!="yes"){
         window.location.href = "index.html";
