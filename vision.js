@@ -42,7 +42,8 @@ if (myWorkouts.length > 1){
 }
 
 function setup() {
-    createCanvas(680, 480);
+    var canvas = createCanvas(680, 480);
+    canvas.parent('workoutLeft')
     video = createCapture(VIDEO)
     video.hide()
     poseNet = ml5.poseNet(video, modelLoaded)

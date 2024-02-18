@@ -160,6 +160,32 @@ body{
   background-size:cover;
   background-position:center;
 }
+#workoutWrapper{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:start;
+  align-items:stretch;
+  background: url('images/bgExtra.png');
+  background-size:cover;
+  background-position:center;
+}
+#workoutLeft{
+  display:flex;
+  flex-direction:column;
+  justify-content:start;
+  align-items:center;
+  height:100%;
+  width:60%;
+}
+#workoutRight{
+  display:flex;
+  flex-direction:column;
+  justify-content:start;
+  align-items:center;
+  height:100%;
+  width:60%;
+}
 #createWrapper{
   height:100%;
   display:flex;
