@@ -23,11 +23,12 @@ function check(){
         current = snapshot.val()
         if (current == null){
             current = []
+            sessionStorage.setItem("workout", ["null"])
         }
         else {
             current = current.array
+            sessionStorage.setItem("workout", current)
         }
-        sessionStorage.setItem("workout", current)
     })
 }
 
