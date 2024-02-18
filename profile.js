@@ -59,9 +59,6 @@ function suggestedWorkout(){
             max = info[i].value
         }
     }
-    if (max == 100){
-        completelyRandom = true;
-    }
     highestValueIds.push(info[ind].id)
     info.splice(ind, 1);
     max = -1;
