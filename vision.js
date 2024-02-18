@@ -8,6 +8,13 @@ const currentStretch = document.getElementById("currentStretch")
 const nextStretch = document.getElementById("nextStretch")
 const accuracy = document.getElementById("accuracy")
 
+currentStretch.innerHTML = myWorkouts[0]
+if (myWorkouts.length > 1){
+    nextStretch.innerHTML = myWorkouts[1]
+} else{
+    nextStretch.innerHTML = ""
+}
+
 dotSize = 20
 //myWorkouts = sessionStorage.getItem("workout")
 myWorkouts = ["butterfly", "dave", "Ben", "Jeff"]
