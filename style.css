@@ -343,6 +343,13 @@ body{
   margin: 0px 0px 75px 0px;
   color:rgb(255, 255, 255)
 }
+#hiText{
+  font-family: "Red Hat Display";
+  font-size:500px;
+  font-weight:800;
+  margin: 0px 0px 40px 0px;
+  color:rgb(255, 255, 255)
+}
 #startStretch{
   font-family: "Red Hat Display";
   margin: 75px 0px 0px 0px;
@@ -370,6 +377,16 @@ body{
   align-items:center;
 }
 #homeMain hr{
+  width:100%;
+  border: solid 3px rgb(255, 255, 255);
+}
+#sideMain{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+#sideMain hr{
   width:100%;
   border: solid 3px rgb(255, 255, 255);
 }
