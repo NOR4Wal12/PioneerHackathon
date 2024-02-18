@@ -171,7 +171,6 @@ body{
   background-position:center;
 }
 #createLeft{
-  height:100%;
   width:33%;
   display:flex;
   flex-direction:column;
@@ -183,7 +182,6 @@ body{
   padding:20px 25px;
 }
 #createRight{
-  height:100%;
   width:66%;
   display:flex;
   flex-direction:column;
@@ -193,6 +191,22 @@ body{
   border-radius:20px;
   margin: 20px 20px;
   padding:20px 25px;
+}
+#yourExercise{
+  color:rgb(61, 53, 53);
+  font-weight:900;
+  margin:5px;
+  font-size:48px;
+}
+#list{
+  font-size:24px;
+  font-weight:800;
+}
+#addExercise{
+  color:rgb(61, 53, 53);
+  font-weight:900;
+  margin:5px;
+  font-size:48px;
 }
 #poseArray{
   display:flex;
