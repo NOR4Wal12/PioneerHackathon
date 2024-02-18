@@ -26,15 +26,6 @@ function pullStretch(){
     );
 
     for (let i = 0; i < stretchIds.length; i++){
-        for (let j = 0; j < info.length; j++){
-            if (info[j].id == stretchIds[i]){
-                console.log(i + ":" + j)
-                break;
-            }
-        }
-        info.push({id: stretchIds[i], value: 100})
-    }
-    for (let i = 0; i < stretchIds.length; i++){
         temp = true;
         for (let j = 0; j < info.length; j++){
             if (info[j].id == stretchIds[i]){
@@ -46,41 +37,44 @@ function pullStretch(){
         }
     }
 
-// Initialize variables to store highest value and IDs with highest values
-    let highestValue = Number.NEGATIVE_INFINITY;
     let highestValueIds = [];
-    
-    // Iterate through the array to find the highest value
-    for (const item of info) {
-        if (item.value > highestValue) {
-            highestValue = item.value;
-            highestValueIds = [item.id]; // New highest value, so reset IDs array
-        } else if (item.value === highestValue) {
-            highestValueIds.push(item.id); // Add ID to IDs array if it has the same highest value
+
+    let max = -1;
+    let ind = 0;
+    for (let i = 0; i < info.length; i++){
+        if (info[i].value > max){
+            ind = i;
+            max = info[i].value
         }
     }
-    
-    // Randomly select three IDs from the IDs array
-    const randomIds = [];
-    while (randomIds.length < 3 && highestValueIds.length > 0) {
-        const randomIndex = Math.floor(Math.random() * highestValueIds.length);
-        const randomId = highestValueIds.splice(randomIndex, 1)[0]; // Remove selected ID from IDs array
-        randomIds.push(randomId);
+    highestValueIds.push(info[ind].id)
+    info.splice(ind, 1);
+    console.log(highestValueIds)
+
+    max = -1;
+    ind = 0;
+    for (let i = 0; i < info.length; i++){
+        if (info[i].value > max){
+            ind = i;
+            max = info[i].value
+        }
     }
-    
-    console.log("IDs with highest values:", randomIds);
+    highestValueIds.push(info[ind].id)
+    info.splice(ind, 1);
+    console.log(highestValueIds)
 
+    max = -1;
+    ind = 0;
+    for (let i = 0; i < info.length; i++){
+        if (info[i].value > max){
+            ind = i;
+            max = info[i].value
+        }
+    }
+    highestValueIds.push(info[ind].id)
+    info.splice(ind, 1);
+    console.log(highestValueIds)
 }
-
-// Randomly select three IDs from the IDs array
-const randomIds = [];
-while (randomIds.length < 3 && highestValueIds.length > 0) {
-    const randomIndex = Math.floor(Math.random() * highestValueIds.length);
-    const randomId = highestValueIds.splice(randomIndex, 1)[0]; // Remove selected ID from IDs array
-    randomIds.push(randomId);
-}
-
-console.log("IDs with highest values:", randomIds);
 
 function addWorkout(name){
     email = localStorage.getItem("user")
