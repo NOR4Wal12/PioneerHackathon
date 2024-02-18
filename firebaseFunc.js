@@ -43,14 +43,11 @@ function pullStretch(){
     stretchesRef.get().then((snapshot) => {
         if (snapshot.exists()) {
             const data = snapshot.val();
-            const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3']; // Get all stretch IDs
-            // Sort stretch IDs by descending value
             snapshot.forEach(function(data){
                 info.push(data.val())
             })
 
             console.log(info)
-            // document.getElementById('result').innerText = JSON.stringify(stretchIds);
         } else {
             console.log("No data available");
             // document.getElementById('result').innerText = "No data available";
@@ -65,6 +62,7 @@ function pullStretch(){
     for (let i = 0; i < stretchIds.length; i++){
         for (let j = 0; j < info.length; j++){
             if (info[j].id == stretchIds[i]){
+                console.log(i + ":" + j)
                 break;
             }
         }
@@ -72,6 +70,8 @@ function pullStretch(){
     }
 
     console.log(info)
+
+    
 
     // console.log(stretchIds)
     
