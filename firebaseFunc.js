@@ -76,10 +76,12 @@ function pullStretch(){
             max = info[i].value
         }
     }
+    
     highestValueIds.push(info[ind].id)
     info.splice(ind, 1);
     console.log(highestValueIds)
 
+    str = "";
     for (let i = 0; i < highestValueIds.length; i++){
         str += (i + 1) + ". " + toDisplay(highestValueIds[i]) + "</br>";
     }
