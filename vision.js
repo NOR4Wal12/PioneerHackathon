@@ -16,11 +16,11 @@ time = 15
 workoutIdeals = {
     "butterfly": [40, 40, 74, 100, 100],
     "downwarddog": [160, 160, 125, 25, 25],
-    "crescent": [150, 174, 153, 89, 128],
+    "crescent": [90, 140, 160, 180, 180],
     "easy": [50, 50, 75, 100, 100],
-    "triangle": [180, 180, 74, 112],
-    "reversewarrior": [135, 180, 83, 180, 50],
-    "tree": [50, 170, 170, 40, 30],
+    "triangle": [180, 180, 150, 50, 150],
+    "reversewarrior": [160, 180, 83, 180, 50],
+    "tree": [40, 170, 170, 90, 90],
     "warrior1": [180, 180, 145, 90, 90],
     "warrior2": [127, 170, 133, 90, 90],
     "warrior3": [160, 160, 130, 120, 120],
@@ -76,7 +76,7 @@ function checkDots(pose){
           pose.leftShoulder.confidence, pose.rightKnee.confidence, pose.leftKnee.confidence, 
           pose.rightAnkle.confidence, pose.leftAnkle.confidence]
     for (let i = 0; i<Lespos.length; i++){
-        if (Lespos[i] < 0.13){
+        if (Lespos[i] < 0.1){
             closeText.innerHTML = "Please make sure your entire body is in frame"
             allGood = false;
             break
@@ -94,7 +94,7 @@ function gotPoses(poses){
         confidence.innerHTML = pose.score
         checkDots(pose)
         getDist(pose, workoutIdeals[myWorkouts[0]])
-        time -= 0.2
+        time -= 0
         timer.innerHTML = "Time Remaining: " + Math.round(time)
         if (time <= 0.2){
             myWorkouts.shift(1)
@@ -152,14 +152,17 @@ function getAngle(Ax, Ay, Bx, By, Cx, Cy){
             
             ellipse(pose.rightShoulder.x, pose.rightShoulder.y, dotSize)
             ellipse(pose.leftShoulder.x, pose.leftShoulder.y, dotSize)
-            
+            fill(0,255,0)
             ellipse(pose.rightKnee.x, pose.rightKnee.y, dotSize)
+            fill(255,0,0)
             ellipse(pose.leftKnee.x, pose.leftKnee.y, dotSize)
-            
+            fill(0,250,0)
             ellipse(pose.rightAnkle.x, pose.rightAnkle.y, dotSize)
+            fill(255,0,0)
             ellipse(pose.leftAnkle.x, pose.leftAnkle.y, dotSize)
-
+            fill(0,250,0)
             ellipse(pose.rightHip.x, pose.rightHip.y, dotSize)
+            fill(255,0,0)
             ellipse(pose.leftHip.x, pose.leftHip.y, dotSize)
         } 
     } 
