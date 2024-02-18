@@ -13,7 +13,7 @@ const accuracy = document.getElementById("accuracy")
 dotSize = 20
 //myWorkouts = sessionStorage.getItem("workout")
 myWorkouts = ["butterfly", "dave", "Ben", "Jeff"]
-timer = 15
+time = 15
 
 function setup() {
     createCanvas(680, 480);
@@ -50,11 +50,11 @@ function gotPoses(poses){
         //angle.innerHTML = getAngle(pose.rightWrist.x, pose.rightWrist.y, 
         //    pose.rightShoulder.x, pose.rightHip.y, 
         //    pose.rightKnee.x, pose.rightKnee.y)
-        timer -= 0.2
-        timer.innerHTML = "Time Remaining: " + Math.round(timer)
-        if (timer <= 0.2){
+        time -= 0.2
+        timer.innerHTML = "Time Remaining: " + Math.round(time)
+        if (time <= 0.2){
             myWorkouts.slice(1)
-            timer=15
+            time=15
             if (myWorkouts.length == 0){
                 window.location.href = "index.html"
             } 
@@ -77,7 +77,7 @@ function modelLoaded(){
 }
 
 
-cameraOn = 1;
+let cameraOn = 1;
 const button = document.getElementById("changeButton")
   button.onclick = (event) => {
     event.preventDefault()
