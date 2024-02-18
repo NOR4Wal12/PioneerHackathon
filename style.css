@@ -158,6 +158,11 @@ body{
   border-radius:30px;
   background-color:rgb(207, 152, 171);
   padding:15px 30px;
+  transition:background-color 0.3s, color 0.3s;
+}
+#startStretch:hover{
+  color:rgb(97, 82, 82);
+  background-color:rgb(233, 170, 192);
 }
 #homeSide{
   display:flex;
