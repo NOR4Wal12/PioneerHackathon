@@ -12,28 +12,18 @@ errors = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
 
 cameraOn = 1
 dotSize = 15
-//myWorkouts = sessionStorage.getItem("workout")
-//if (myWorkouts[0]=="null"){
-//    myWorkouts.push("warrior2")
-//}
-//console.log(myWorkouts)
+
+
 function visionLoad(){
     if(localStorage.getItem("loggedIn")!="yes"){
         window.location.href = "index.html";
-        document.addEventListener('DOMContentLoaded', () => {
-            const workoutNameElement = document.getElementById('workoutName');
-            const selectedWorkout = sessionStorage.getItem('selectedWorkout');
-            
-            if (selectedWorkout) {
-                workoutNameElement.textContent = selectedWorkout;
-            } else {
-                workoutNameElement.textContent = 'No workout selected.';
-            }
-        });
     }
-
+    myWorkouts = sessionStorage.getItem("workout")
+    if (myWorkouts[0]=="null"){
+        myWorkouts.push("warrior2")
+    }
 }
-myWorkouts = selectedWorkout
+
 time = 15
 workoutIdeals = {
     "butterfly": [40, 40, 74, 100, 100],
