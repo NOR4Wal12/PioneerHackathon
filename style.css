@@ -235,12 +235,9 @@ body{
   font-weight:bold;
   border-radius:30px;
   padding:10px 20px;
-  border: solid 1px black;
+  background-color: rgb(255 255 255 / 45%);
 }
-#profileMain hr{
-  width:80%;
-  border: 2px solid rgb(255, 255, 255);
-}
+
 #profileWelcome{
   font-size:60px;
   font-weight:600;
@@ -248,11 +245,10 @@ body{
   margin:30px 0px 10px 0px;
 }
 .profileBox{
-  background-color:rgb(176, 196, 221);
+  background-color:rgb(255 255 255 / 45%);
   width:80%;
   border-radius:20px;
   margin: 20px 0px;
-  border: solid 2px rgb(91, 93, 148);
   display:flex;
   flex-direction:column;
   align-items:start;
@@ -274,6 +270,10 @@ body{
   width:80%;
   border: solid 1px rgb(61, 53, 53);
   margin:0px 0px 20px 0px;
+}
+#profileMain hr{
+  width:80%;
+  border: 2px solid rgb(255, 255, 255);
 }
 .hidden{
   opacity:0;
