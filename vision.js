@@ -8,6 +8,11 @@ const timer = document.getElementById("timer")
 const currentStretch = document.getElementById("currentStretch")
 const nextStretch = document.getElementById("nextStretch")
 const accuracy = document.getElementById("accuracy")
+const done2 = document.getElementById("done2")
+done2.onclick = (event) =>{
+    event.preventDefault()
+    window.location.href="home.html"
+}
 errors = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
 
 cameraOn = 1
@@ -133,7 +138,9 @@ function gotPoses(poses){
             myWorkouts.shift(1)
             time=15
             if (myWorkouts.length == 0){
-                window.location.href = "index.html"
+                document.getElementById('workoutTop').style.display = "none"
+                document.getElementById('workoutBottom').style.display = "none"
+                document.getElementById('workoutDone').style.display = "flex"
             } 
             else{
                 currentStretch.innerHTML = toDisplay(myWorkouts[0])
