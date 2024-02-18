@@ -36,12 +36,12 @@ function pullStretch(){
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
 
-    const stretchesRef = firebase.database().ref("stretches");
+    const stretchesRef = firebase.database().ref(user+"/stretches");
 
     stretchesRef.get().then((snapshot) => {
         if (snapshot.exists()) {
             const data = snapshot.val();
-            const stretchIds = Object.keys(data); // Get all stretch IDs
+            const stretchIds = ['butterfly', 'downwarddog', 'crescent', 'easy', 'triangle', 'reversewarrior', 'tree', 'warrior1', 'warrior2', 'warrior3']; // Get all stretch IDs
             // Sort stretch IDs by descending value
             stretchIds.sort((a, b) => {
                 const valueA = data[a]?.value || 100; // Default to 100 if value doesn't exist
